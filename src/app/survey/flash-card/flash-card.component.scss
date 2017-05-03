@@ -1,0 +1,44 @@
+@import '../../../variables';
+
+.flash-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 60vh;
+  width: 80vw;
+  max-height: 60rem;
+  max-width: 80rem;
+  background-color: $color3;
+
+  .title {
+    text-align: center;
+  }
+
+  .answer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+
+      li {
+        display: flex;
+        flex-basis: 50%;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+
+    clr-icon {
+      margin-right: 1rem;
+    }
+  }
+}
