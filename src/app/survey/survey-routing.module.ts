@@ -7,7 +7,13 @@ import { SurveyComponent } from './survey/survey.component';
 const routes: Routes = [
   {
     path: 'survey',
-    component: SurveyComponent
+    component: SurveyComponent,
+    children: [
+      {
+        path: ':id',
+        component: FlashCardComponent,
+      }
+    ]
   }
 ];
 

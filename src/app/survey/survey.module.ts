@@ -5,6 +5,8 @@ import { SurveyRoutingModule } from './survey-routing.module';
 import { FlashCardComponent } from './flash-card/flash-card.component';
 import { SurveyComponent } from './survey/survey.component';
 
+import { FlashCardService } from './flash-card.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -13,6 +15,9 @@ import { SurveyComponent } from './survey/survey.component';
   declarations: [
     FlashCardComponent, 
     SurveyComponent
+  ],
+  providers: [
+    FlashCardService,
   ]
 })
 export class SurveyModule { }
