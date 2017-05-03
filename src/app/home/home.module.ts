@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClarityModule } from 'clarity-angular';
+import { FormsModule } from '@angular/forms';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home/home.component';
@@ -9,6 +10,7 @@ import { HomeComponent } from './home/home.component';
   imports: [
     CommonModule,
     ClarityModule.forRoot(),
+    FormsModule,
     HomeRoutingModule
   ],
   declarations: [
