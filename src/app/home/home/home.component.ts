@@ -12,4 +12,9 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngAfterContentInit() {
+    //focus on our name input
+    document.getElementById('enterName').focus()
+  }
+
 }

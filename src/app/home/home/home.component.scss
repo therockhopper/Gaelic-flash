@@ -1,3 +1,5 @@
+@import '../../../variables';
+
 .home {
   display: flex;
   flex-direction: column;
@@ -8,11 +10,54 @@
   .menu {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    background-color: $color3;
+    height: 80vh;
+    width: 80vw;
+    max-height: 50rem;
+    max-width: 80rem;
+
+    .title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      clr-dropdown, button {
+        margin: 1rem 0;
+      }
+
+    }
+
+    h1 {
+      margin: 0;
+    }
 
     input {
-      text-align: center;
+      height: 100%;
+      width: 100%;
+      background: none;
+      border: none;
+      font-size: 2.4rem;
+      line-height: 0;
+      text-align: left;
+      padding: 0;
+      padding-left: 1rem;
+
+      &:hover, &:focus {
+        outline: none;
+        border-bottom: 1px solid $color5; 
+      }
+    }
+
+    button {
+      width: 100%;
     }
   }
 }

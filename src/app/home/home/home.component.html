@@ -1,11 +1,25 @@
 <div class="home">
 
   <div class="menu">
-    <h1>Welcome</h1>
-    <input placeholder="Enter name">
-    <button>Select Theme</button>
-    <button routerLink="/results">Leaderboards</button>
-    <button routerLink="/survey">Start</button>
+    <div class="title">
+      <h1>Welcome</h1>
+      <input id="enterName" placeholder="Enter name">
+    </div>
+    <div class="container">
+      <clr-dropdown>
+        <button class="btn btn-outline-primary" clrDropdownToggle>
+         Select Theme 
+          <clr-icon shape="caret down"></clr-icon>
+        </button>
+        <clr-dropdown-menu>
+          <label class="dropdown-header">Dropdown header</label>
+          <a clrDropdownItem>Action 1</a>
+          <a clrDropdownItem>Action 2</a>
+        </clr-dropdown-menu>
+      </clr-dropdown>
+      <button class="btn btn-danger" routerLink="/results">Leaderboards</button>
+      <button class="btn btn-success" routerLink="/survey">Start</button>
+    </div>
   </div>
 
 </div>
