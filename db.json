@@ -74,7 +74,7 @@
         },
         {
           "questionText": "How many leafs",
-          "corectAnswer": 2,
+          "correctAnswer": 2,
           "audioUrl": "rooster.mp3",
           "possibleAnswers": [
             {
@@ -102,7 +102,7 @@
         {
           "questionText": "How many twigs",
           "audioUrl": "heartbeat.mp3",
-          "corectAnswer": 4,
+          "correctAnswer": 4,
           "possibleAnswers": [
             {
               "id": 1,

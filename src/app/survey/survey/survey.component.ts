@@ -56,10 +56,8 @@ export class SurveyComponent implements OnInit {
     if ( !this.flashCardResult.correct ) {
       // find the mofo 
       let correctAnswer = this.flashCard.possibleAnswers.find((item) => {
-        console.log(item.id, this.flashCard.correctAnswer)
         if ( item.id == this.flashCard.correctAnswer ) return item
       })
-    console.log(correctAnswer, this.flashCard.correctAnswer)
     this.flashCardResult.correctAnswer = correctAnswer
     }
     // hide our flashCard and show the result card
