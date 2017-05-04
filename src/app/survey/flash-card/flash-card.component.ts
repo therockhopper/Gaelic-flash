@@ -18,6 +18,11 @@ export class FlashCardComponent implements OnInit {
     console.log(this.flashCard)
   }
 
+  playAudio(id: string): void {
+    let audio: any = document.getElementById(id)
+    audio.play()
+  }
+
   submitAnswer(index: number = -1): void {
     let result: boolean
     // did the user select the correct answer

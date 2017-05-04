@@ -21,21 +21,26 @@
         {
           "questionText": "How many trees",
           "correctAnswer": 1,
+          "audioUrl": "rooster.mp3",
           "possibleAnswers": [
             {
               "id": 1,
+              "audioUrl": "heartbeat.mp3",
               "answerText": "1 or two"
             },
             {
               "id": 2,
+              "audioUrl": "heartbeat.mp3",
               "answerText": "2 or two"
             },
             {
               "id": 2,
+              "audioUrl": "heartbeat.mp3",
               "answerText": "3 or two"
             },
             {
               "id": 2,
+              "audioUrl": "heartbeat.mp3",
               "answerText": "4 or two"
             }
           ]
@@ -43,21 +48,26 @@
         {
           "questionText": "How many berries",
           "correctAnswer": 3,
+          "audioUrl": "heartbeat.mp3",
           "possibleAnswers": [
             {
               "id": 1,
+              "audioUrl": "heartbeat.mp3",
               "answerText": "1 or two"
             },
             {
               "id": 2,
+              "audioUrl": "heartbeat.mp3",
               "answerText": "2 or two"
             },
             {
               "id": 2,
+              "audioUrl": "heartbeat.mp3",
               "answerText": "3 or two"
             },
             {
               "id": 2,
+              "audioUrl": "heartbeat.mp3",
               "answerText": "4 or two"
             }
           ]
@@ -65,43 +75,53 @@
         {
           "questionText": "How many leafs",
           "corectAnswer": 2,
+          "audioUrl": "rooster.mp3",
           "possibleAnswers": [
             {
               "id": 1,
+              "audioUrl": "heartbeat.mp3",
               "answerText": "1 or two"
             },
             {
               "id": 2,
+              "audioUrl": "heartbeat.mp3",
               "answerText": "2 or two"
             },
             {
               "id": 2,
+              "audioUrl": "heartbeat.mp3",
               "answerText": "3 or two"
             },
             {
               "id": 2,
+              "audioUrl": "heartbeat.mp3",
               "answerText": "4 or two"
             }
           ]
         },
         {
           "questionText": "How many twigs",
+          "audioUrl": "heartbeat.mp3",
           "corectAnswer": 4,
           "possibleAnswers": [
             {
               "id": 1,
+              "audioUrl": "heartbeat.mp3",
               "answerText": "1 or two"
             },
             {
               "id": 2,
+              "audioUrl": "heartbeat.mp3",
               "answerText": "2 or two"
             },
             {
               "id": 2,
+              "audioUrl": "heartbeat.mp3",
               "answerText": "3 or two"
             },
             {
               "id": 2,
+              "audioUrl": "heartbeat.mp3",
               "answerText": "4 or two"
             }
           ]
