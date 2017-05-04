@@ -20,7 +20,7 @@
       "cards": [
         {
           "questionText": "How many trees",
-          "corectAnswer": 1,
+          "correctAnswer": 1,
           "possibleAnswers": [
             {
               "id": 1,
@@ -42,7 +42,7 @@
         },
         {
           "questionText": "How many berries",
-          "corectAnswer": 3,
+          "correctAnswer": 3,
           "possibleAnswers": [
             {
               "id": 1,
