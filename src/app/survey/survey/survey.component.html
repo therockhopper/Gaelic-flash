@@ -1,4 +1,21 @@
-<p>
-  survey works!
-</p>
-<router-outlet></router-outlet>
+<div class="survey">
+  <div class="info">
+    <div class="score">
+      Score: 999
+    </div>
+    <div class="status">
+     1/20 
+    </div>
+    <div class="theme">
+      <span>Theme: Nature</span>
+    </div>
+  </div>
+  <div class="container">
+    <app-flash-card 
+      *ngIf="displayFlashCard" 
+      [flashCard]="flashCard" 
+      (change)="submitAnswer($event)">
+    </app-flash-card>
+    <div *ngIf="displayResult"><button (click)="nextQuestion()" class="btn btn-danger">woop woop</button></div>
+  </div>
+</div>

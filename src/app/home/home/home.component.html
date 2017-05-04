@@ -1,11 +1,28 @@
 <div class="home">
 
   <div class="menu">
-    <h1>Welcome</h1>
-    <input placeholder="Enter name">
-    <button>Select Theme</button>
-    <button routerLink="/results">Leaderboards</button>
-    <button routerLink="/survey">Start</button>
+    <form class="title" #homeForm="ngForm">
+      <h1>Welcome</h1>
+      <input 
+          id="enterName" 
+          name="name"
+          (blur)="setUserName(userName)" 
+          [(ngModel)]="userName" 
+          placeholder="Enter name">
+    </form>
+    <div class="container" *ngIf="themes">
+      <clr-dropdown>
+        <button class="btn btn-outline-primary" clrDropdownToggle>
+          {{ selectedTheme.name }}
+          <clr-icon shape="caret down"></clr-icon>
+        </button>
+        <clr-dropdown-menu>
+          <a *ngFor="let theme of themes" (click)="setSelectedTheme(theme)" clrDropdownItem>{{ theme.name }}</a>
+        </clr-dropdown-menu>
+      </clr-dropdown>
+      <button class="btn btn-danger" routerLink="/results">Leaderboards</button>
+      <button class="btn btn-success" routerLink="/survey/0">Start</button>
+    </div>
   </div>
 
 </div>
