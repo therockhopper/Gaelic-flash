@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     //get all the possible themes for the game 
-    this.themesSub = this.service.getAllThemes().subscribe(
+    this.themesSub = this.service.getThemes().subscribe(
       themes => {
         this.themes = themes
         this.setSelectedTheme(themes[0])

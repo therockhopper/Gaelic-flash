@@ -23,14 +23,14 @@ export class FlashCardService {
     this.theme = theme
   }
 
-  getAllThemes(): Observable<any> {
+  getThemes(): Observable<any> {
     return this.http.get(this.themesUrl)
     .map((res:Response) => res.json())
     .catch((error:any) => Observable.throw(error.json().error || 'Server Error'))
   }
 
-  getFlashCard(id:number = 0): Observable<any> {
-    return this.http.get(this.flashCardsUrl)
+  getThemeFlashCards(id:number = 1): Observable<any> {
+    return this.http.get(this.flashCardsUrl + id)
     .map((res:Response) => res.json())
     .catch((error:any) => Observable.throw(error.json().error || 'Server Error'))
   }

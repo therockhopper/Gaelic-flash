@@ -1,27 +1,12 @@
 <div class="flash-card">
   <div class="title">
-    <h2>woop woop woop woop woop</h2>
+    <h2>{{ flashCard.questionText }}</h2>
   </div>
   <div class="answer">
     <ul>
-      <li>
-        <button (click)="submitAnswer(1)" class="btn btn-success">
-          1.woop woop woop
-        </button>
-      </li>
-      <li>
-        <button class="btn btn-success">
-          1.woop woop woop
-        </button>
-      </li>
-      <li>
-        <button class="btn btn-success">
-          1.woop woop woop
-        </button>
-      </li>
-      <li>
-        <button class="btn btn-success">
-          1.woop woop woop
+      <li *ngFor="let answer of flashCard.possibleAnswers">
+        <button (click)="submitAnswer(answer.id)" class="btn btn-success">
+          ({{ answer.id}}) {{ answer.answerText}} 
         </button>
       </li>
     </ul>
