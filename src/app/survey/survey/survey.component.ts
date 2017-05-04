@@ -11,6 +11,7 @@ import 'rxjs/add/operator/switchMap';
 export class SurveyComponent implements OnInit {
   flashCard: any
   flashCards: any
+  numberOfFlashCards:number
   flashCardResult: any
 
   flashCardIndex: number
@@ -28,7 +29,6 @@ export class SurveyComponent implements OnInit {
     // we do not want to show the flash card till we have the data
     this.displayFlashCard = false
     this.displayResult = false 
-
     this.flashCardIndex = 0 // start at the first index
   }
 
@@ -42,8 +42,7 @@ export class SurveyComponent implements OnInit {
       flashCards => {
         this.flashCards = flashCards
         this.flashCard = flashCards.cards[this.flashCardIndex]
-
-        console.log(this.flashCards, this.flashCardIndex)
+        this.numberOfFlashCards = flashCards.cards.length
         this.displayFlashCard = true  
       },
       err => console.log(err)
@@ -62,8 +61,15 @@ export class SurveyComponent implements OnInit {
   nextQuestion(): void {
     // update our index
     this.flashCardIndex++ 
-    // get our new flashCard
-    this.flashCard = this.flashCards.cards[this.flashCardIndex]
+
+    // is this the last card?
+    if ( this.flashCardIndex >= this.numberOfFlashCards ) {
+      // send user to results, since they have seen all the flash cards
+      this.router.navigate(['/results'])
+    } else {
+      // get our new flashCard
+      this.flashCard = this.flashCards.cards[this.flashCardIndex]
+    }
 
     // hide our result card and show the question
     this.displayFlashCard = true  
