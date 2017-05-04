@@ -1,0 +1,29 @@
+.results {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+
+  h1, h2 {
+    color: #fff;
+  }
+
+  .title {
+    margin-top: 10vh;
+
+    h1 {
+      font-size: 15rem;
+    }
+  }
+
+  .score {
+    h2 {
+      font-size: 12rem;
+    }
+  }
+ 
+  .footer {
+    margin-bottom: 10vh;
+  }
+}

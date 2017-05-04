@@ -12,12 +12,12 @@ export class SurveyComponent implements OnInit {
   flashCard: any
   flashCards: any
   numberOfFlashCards:number
-  flashCardResult: any
+  flashCardResult: any = {}
 
   flashCardIndex: number
 
   displayFlashCard: boolean
-  displayResult: boolean
+  displayResult: any 
 
   flashCardSub: any // hold our obseravble 
 
@@ -51,19 +51,26 @@ export class SurveyComponent implements OnInit {
 
   submitAnswer(result: boolean):void {
     // did we answer correct?
-    this.flashCardResult = result 
+    this.flashCardResult.correct = result 
+    // if we got the wong answer we need to find out the right answer 
+    if ( !this.flashCardResult.correct ) {
+      // find the mofo 
+      let correctAnswer = this.flashCard.possibleAnswers.find((item) => {
+        if ( item.id == this.flashCard.correctAnswer ) return item
+      })
+    this.flashCardResult.correctAnswer = correctAnswer
+    }
     // hide our flashCard and show the result card
     this.displayFlashCard = false 
     this.displayResult = true 
-
   }
 
   nextQuestion(): void {
     // update our index
     this.flashCardIndex++ 
 
-    // is this the last card?
-    if ( this.flashCardIndex >= this.numberOfFlashCards ) {
+      // is this the last card?
+      if ( this.flashCardIndex >= this.numberOfFlashCards ) {
       // send user to results, since they have seen all the flash cards
       this.router.navigate(['/results'])
     } else {

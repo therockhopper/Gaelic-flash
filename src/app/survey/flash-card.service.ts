@@ -12,11 +12,13 @@ export class FlashCardService {
   themesUrl: string
   theme: any 
   name: string
-  score: string
+  score: number 
 
   constructor( private http:Http ) { 
     this.flashCardsUrl = "http://localhost:3000/flashcards/"
     this.themesUrl = "http://localhost:3000/themes"
+    // fake it till we make it
+    this.score = 243523
   }
 
   setTheme(theme: any = {}): void {
@@ -46,9 +48,17 @@ export class FlashCardService {
   setName(userName:string = "unknown"): void {
     this.name = userName
   } 
+
+  getName(): string {
+    return this.name
+  }
   
   updateScore(increament:number = 0): void {
     this.score += increament
+  }
+
+  getScore(): number {
+    return this.score
   }
 
 }

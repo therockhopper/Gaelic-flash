@@ -17,6 +17,11 @@ export class FlashCardResultComponent implements OnInit {
   ngOnInit() {
   }
 
+  playAudio(id: string): void {
+    let audio: any = document.getElementById(id)
+    audio.play()
+  }
+
   close(): void {
     // update our parent
     this.change.emit()

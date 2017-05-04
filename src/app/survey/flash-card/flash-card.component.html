@@ -8,10 +8,17 @@
         <button (click)="submitAnswer(answer.id)" class="btn btn-success">
           ({{ answer.id}}) {{ answer.answerText}} 
         </button>
+        <audio [id]="$index + 'audio'" [src]="'./assets/sounds/' + answer.audioUrl">
+        </audio>
+        <clr-icon (click)="playAudio($index + 'audio')" size="24" shape="headphones">
+        </clr-icon>
       </li>
     </ul>
   </div>
   <div class="footer">
-    <clr-icon size="24" shape="headphones"></clr-icon>
+    <clr-icon (click)="playAudio('titleAudio')" size="24" shape="headphones">
+    </clr-icon>
+    <audio id="titleAudio" [src]="'./assets/sounds/' + flashCard.audioUrl">
+    </audio>
   </div>
 </div>

@@ -1,6 +1,6 @@
 <div class="flashCardResult">
 
-  <div class="correct" *ngIf="flashCardResult">
+  <div class="correct" *ngIf="flashCardResult.correct">
     <clr-icon class="thumbs" shape="thumbs-up" size="100"></clr-icon>
     <div class="score">
       <clr-icon shape="plus" size="100"></clr-icon>
@@ -8,12 +8,13 @@
     </div>
   </div>
 
-  <div class="wrong" *ngIf="!flashCardResult">
+  <div class="wrong" *ngIf="!flashCardResult.correct">
     <clr-icon class="thumbs" shape="thumbs-down" size="100"></clr-icon>
     <div class="answer">
       <h4>the correct answer is:</h4>
-      <p>woop woop woop woop woopw oowp</p>
-      <clr-icon class="headphones" size="24" shape="headphones"></clr-icon>
+      <p>{{ flashCardResult.correctAnswer.answerText }}</p>
+      <clr-icon (click)="playAudio('audio')" class="headphones" size="24" shape="headphones"></clr-icon>
+        <audio id="audio" [src]="'./assets/sounds/' + flashCardResult.correctAnswer.audioUrl"></audio>
     </div>
   </div>
 
