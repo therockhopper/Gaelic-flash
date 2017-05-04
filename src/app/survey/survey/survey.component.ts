@@ -17,7 +17,7 @@ export class SurveyComponent implements OnInit {
     this.displayFlashCard = false
     this.displayResult = false
 
-    this.flashCardResult = false 
+    this.flashCardResult =true 
   }
 
   ngOnInit() {
