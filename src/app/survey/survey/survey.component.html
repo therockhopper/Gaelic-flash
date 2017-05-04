@@ -11,6 +11,11 @@
     </div>
   </div>
   <div class="container">
-    <router-outlet></router-outlet>
+    <app-flash-card 
+      *ngIf="displayFlashCard" 
+      [flashCard]="flashCard" 
+      (change)="submitAnswer($event)">
+    </app-flash-card>
+    <div *ngIf="displayResult"><button (click)="nextQuestion()" class="btn btn-danger">woop woop</button></div>
   </div>
 </div>

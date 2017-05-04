@@ -8,12 +8,6 @@ const routes: Routes = [
   {
     path: 'survey',
     component: SurveyComponent,
-    children: [
-      {
-        path: ':id',
-        component: FlashCardComponent,
-      }
-    ]
   }
 ];
 
