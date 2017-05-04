@@ -52,14 +52,15 @@ export class SurveyComponent implements OnInit {
   submitAnswer(result: boolean):void {
     // did we answer correct?
     this.flashCardResult.correct = result 
-    console.log(this.flashCard)
     // if we got the wong answer we need to find out the right answer 
     if ( !this.flashCardResult.correct ) {
       // find the mofo 
       let correctAnswer = this.flashCard.possibleAnswers.find((item) => {
+        console.log(item.id, this.flashCard.correctAnswer)
         if ( item.id == this.flashCard.correctAnswer ) return item
       })
-      this.flashCardResult.correctAnswer = correctAnswer
+    console.log(correctAnswer, this.flashCard.correctAnswer)
+    this.flashCardResult.correctAnswer = correctAnswer
     }
     // hide our flashCard and show the result card
     this.displayFlashCard = false 
