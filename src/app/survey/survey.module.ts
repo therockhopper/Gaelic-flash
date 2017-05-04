@@ -7,6 +7,7 @@ import { FlashCardComponent } from './flash-card/flash-card.component';
 import { SurveyComponent } from './survey/survey.component';
 
 import { FlashCardService } from './flash-card.service';
+import { FlashCardResultComponent } from './flash-card-result/flash-card-result.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { FlashCardService } from './flash-card.service';
   ],
   declarations: [
     FlashCardComponent, 
-    SurveyComponent
+    SurveyComponent, FlashCardResultComponent
   ],
   providers: [
     FlashCardService,

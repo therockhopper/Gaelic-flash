@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SurveyComponent implements OnInit {
   flashCard: any
+  flashCardResult: any
 
   displayFlashCard: boolean
   displayResult: boolean
@@ -15,10 +16,13 @@ export class SurveyComponent implements OnInit {
     // we do not want to show the flash card till we have the data
     this.displayFlashCard = false
     this.displayResult = false
+
+    this.flashCardResult =true 
   }
 
   ngOnInit() {
-    this.displayFlashCard = true  
+    //this.displayFlashCard = true  
+    this.displayResult = true  
   }
 
   submitAnswer(event: any):void {
