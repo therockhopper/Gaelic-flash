@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-flash-card-result',
@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./flash-card-result.component.scss']
 })
 export class FlashCardResultComponent implements OnInit {
+  @Input()
+  flashCardResult: any
+
+  @Output()
+  change: EventEmitter<boolean> = new EventEmitter<boolean>()
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  close(): void {
+    // update our parent
+    this.change.emit()
   }
 
 }

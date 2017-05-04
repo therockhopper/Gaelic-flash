@@ -1,3 +1,21 @@
-<p>
-  flash-card-result works!
-</p>
+<div class="flashCardResult">
+
+  <div class="correct" *ngIf="flashCardResult">
+    <clr-icon class="thumbs" shape="thumbs-up" size="100"></clr-icon>
+    <div class="score">
+      <clr-icon shape="plus" size="100"></clr-icon>
+      <span>100</span>
+    </div>
+  </div>
+
+  <div class="wrong" *ngIf="!flashCardResult">
+    <clr-icon class="thumbs" shape="thumbs-down" size="100"></clr-icon>
+    <div class="answer">
+      <h4>the correct answer is:</h4>
+      <p>woop woop woop woop woopw oowp</p>
+      <clr-icon class="headphones" size="24" shape="headphones"></clr-icon>
+    </div>
+  </div>
+
+  <button (click)="close()" class="btn btn-success">Next</button>
+</div>

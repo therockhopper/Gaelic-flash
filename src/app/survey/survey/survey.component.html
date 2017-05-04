@@ -16,6 +16,10 @@
       [flashCard]="flashCard" 
       (change)="submitAnswer($event)">
     </app-flash-card>
-    <div *ngIf="displayResult"><button (click)="nextQuestion()" class="btn btn-danger">woop woop</button></div>
+    <app-flash-card-result 
+      *ngIf="displayResult"
+      [flashCardResult]="flashCardResult" 
+      (change)="nextQuestion($event)">
+    </app-flash-card-result>
   </div>
 </div>

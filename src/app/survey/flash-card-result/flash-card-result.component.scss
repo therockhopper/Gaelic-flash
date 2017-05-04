@@ -1,0 +1,58 @@
+.flashCardResult {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    clr-icon.thumbs {
+      color: #fff;
+      margin-bottom: 2rem;
+    }
+
+  .correct {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .score {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+
+      span {
+        font-size: 10rem; // same size as svg
+      }
+    }
+  }
+
+  .wrong {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .answer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+
+      h4 {
+        color: #fff;
+      }
+
+      .headphones {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  button {
+    margin-top: 2rem;
+    width: 60vw;
+    max-width: 30rem;
+  }
+}
