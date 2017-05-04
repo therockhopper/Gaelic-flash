@@ -15,7 +15,6 @@ export class FlashCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit() { 
-    console.log(this.flashCard)
   }
 
   playAudio(id: string): void {
