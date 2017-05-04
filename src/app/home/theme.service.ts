@@ -7,21 +7,24 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class FlashCardService {
-  flashCardsUrl: string
+export class ThemeService {
+  themesUrl: string
+  theme: any 
 
   constructor( private http:Http ) { 
-    this.flashCardsUrl = "http://localhost:3000/flashcards/"
+    this.themesUrl = "http://localhost:3000/themes"
   }
 
-  getThemeFlashCards(id:number = 1): Observable<any> {
-    return this.http.get(this.flashCardsUrl + id)
-    .map((res:Response) => res.json())
-    .catch((error:any) => Observable.throw(error.json().error || 'Server Error'))
+  setTheme(theme: any = {}): void {
+    this.theme = theme
   }
 
-  getAllFlashCards(): Observable<any> {
-    return this.http.get(this.flashCardsUrl)
+  getTheme(): any {
+    return this.theme || {"id": 1,"name": "nature"}
+  }
+
+  getThemes(): Observable<any> {
+    return this.http.get(this.themesUrl)
     .map((res:Response) => res.json())
     .catch((error:any) => Observable.throw(error.json().error || 'Server Error'))
   }
