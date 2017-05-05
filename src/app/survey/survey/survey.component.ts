@@ -1,49 +1,66 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+
 import { FlashCardService } from '../flash-card.service';
-import 'rxjs/add/operator/switchMap';
+import { ScoreService } from '../../results/score.service';
+import { ThemeService } from '../../home/theme.service';
 
 @Component({
   selector: 'app-survey',
   templateUrl: './survey.component.html',
-  styleUrls: ['./survey.component.scss']
+  styleUrls: ['./survey.component.scss'],
+  providers: [
+    FlashCardService,
+    ScoreService,
+    ThemeService,
+  ]
 })
 export class SurveyComponent implements OnInit {
   flashCard: any
   flashCards: any
   numberOfFlashCards:number
   flashCardResult: any = {}
-
   flashCardIndex: number
 
   displayFlashCard: boolean
-  displayResult: any 
+  displayResult:boolean 
+
+  loading: boolean
 
   flashCardSub: any // hold our obseravble 
+
+  score: number
+  theme: any 
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private service: FlashCardService,
+    private flashCardService: FlashCardService,
+    private scoreService: ScoreService,
+    private themeService: ThemeService,
   ) { 
     // we do not want to show the flash card till we have the data
     this.displayFlashCard = false
-    this.displayResult = false 
     this.flashCardIndex = 0 // start at the first index
   }
 
   ngOnInit() {
+    this.loading = true
+    this.displayFlashCard = true  
+
+    this.theme = this.themeService.getTheme()
+    this.score = this.scoreService.getScore()
     // get the flashcard data
     this.getData()
   }
 
   getData(): void {
-    this.flashCardSub = this.service.getThemeFlashCards().subscribe(
+    this.flashCardSub = this.flashCardService.getThemeFlashCards(this.theme.id).subscribe(
       flashCards => {
         this.flashCards = flashCards
         this.flashCard = flashCards.cards[this.flashCardIndex]
         this.numberOfFlashCards = flashCards.cards.length
-        this.displayFlashCard = true  
+        this.loading = false 
       },
       err => console.log(err)
     )
@@ -59,10 +76,13 @@ export class SurveyComponent implements OnInit {
         if ( item.id == this.flashCard.correctAnswer ) return item
       })
     this.flashCardResult.correctAnswer = correctAnswer
+    } else {
+      // add to the score
+      this.scoreService.updateScore(100)
+      this.score = this.scoreService.getScore()
     }
     // hide our flashCard and show the result card
     this.displayFlashCard = false 
-    this.displayResult = true 
   }
 
   nextQuestion(): void {
@@ -80,7 +100,6 @@ export class SurveyComponent implements OnInit {
 
     // hide our result card and show the question
     this.displayFlashCard = true  
-    this.displayResult = false 
   }
 
   ngOnDestroy(): void {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FlashCardService } from '../../survey/flash-card.service';
+import { ScoreService } from '../score.service';
 
 @Component({
   selector: 'app-results',
@@ -10,15 +10,15 @@ export class ResultsComponent implements OnInit {
   score:number
   name: string
 
-  constructor( private service:FlashCardService ) { }
+  constructor( private scoreService:ScoreService ) { }
 
   ngOnInit() {
     this.getData()
   }
 
   getData(): void {
-    this.score = this.service.getScore()
-    this.name = this.service.getName()
+    this.score = this.scoreService.getScore()
+    this.name = this.scoreService.getName()
   }
 
 }

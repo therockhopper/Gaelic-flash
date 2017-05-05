@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ResultsRoutingModule } from './results-routing.module';
 import { ResultsComponent } from './results/results.component';
 
+import { ScoreService } from './score.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -11,6 +13,9 @@ import { ResultsComponent } from './results/results.component';
   ],
   declarations: [
     ResultsComponent
+  ],
+  providers: [
+    ScoreService
   ]
 })
 export class ResultsModule { }

@@ -4,10 +4,10 @@ import { ClarityModule } from 'clarity-angular';
 
 import { SurveyRoutingModule } from './survey-routing.module';
 import { FlashCardComponent } from './flash-card/flash-card.component';
+import { FlashCardResultComponent } from './flash-card-result/flash-card-result.component';
 import { SurveyComponent } from './survey/survey.component';
 
 import { FlashCardService } from './flash-card.service';
-import { FlashCardResultComponent } from './flash-card-result/flash-card-result.component';
 
 @NgModule({
   imports: [

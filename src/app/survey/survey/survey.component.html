@@ -1,23 +1,23 @@
 <div class="survey">
   <div class="info">
     <div class="score">
-      Score: 999
+      Score: {{ score }} 
     </div>
-    <div class="status">
-     1/20 
+    <div class="status" *ngIf="!loading">
+      {{ flashCardIndex + 1 }} / {{ numberOfFlashCards }}
     </div>
     <div class="theme">
-      <span>Theme: Nature</span>
+      <span>Theme: {{ theme.name }}</span>
     </div>
   </div>
-  <div class="container">
+  <div class="container" *ngIf="!loading">
     <app-flash-card 
       *ngIf="displayFlashCard" 
       [flashCard]="flashCard" 
       (change)="submitAnswer($event)">
     </app-flash-card>
     <app-flash-card-result 
-      *ngIf="displayResult"
+      *ngIf="!displayFlashCard"
       [flashCardResult]="flashCardResult" 
       (change)="nextQuestion($event)">
     </app-flash-card-result>
