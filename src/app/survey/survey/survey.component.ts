@@ -49,6 +49,7 @@ export class SurveyComponent implements OnInit {
     this.displayFlashCard = true  
 
     this.theme = this.themeService.getTheme()
+    console.log(this.theme)
     this.score = this.scoreService.getScore()
     // get the flashcard data
     this.getData()
