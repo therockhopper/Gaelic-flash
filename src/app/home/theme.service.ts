@@ -25,7 +25,7 @@ export class ThemeService {
   }
 
   getTheme(): any {
-    return this.theme || "nature"
+    return this.theme || "unset"
   }
 
   getThemes(): Observable<any> {

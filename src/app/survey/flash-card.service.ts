@@ -11,11 +11,11 @@ export class FlashCardService {
   flashCardsUrl: string
 
   constructor( private http:Http ) { 
-    this.flashCardsUrl = "http://localhost:3000/flashcards/"
+    this.flashCardsUrl = "http://127.0.0.1:3004/api/flashcard"
   }
 
-  getThemeFlashCards(id:number = 1): Observable<any> {
-    return this.http.get(this.flashCardsUrl + id)
+  getThemeFlashCards(id:number): Observable<any> {
+    return this.http.get(this.flashCardsUrl, {params:{"id": id }})
     .map((res:Response) => res.json())
     .catch((error:any) => Observable.throw(error.json().error || 'Server Error'))
   }
