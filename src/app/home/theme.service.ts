@@ -9,23 +9,31 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ThemeService {
   themesUrl: string
-  theme: any 
+  theme: string 
+  difficulty: string
 
   constructor( private http:Http ) { 
-    this.themesUrl = "http://localhost:3000/themes"
+    this.themesUrl = "http://localhost:3004/api/allThemes"
   }
 
-  setTheme(theme: any = {}): void {
+  setTheme(theme:string = "nature" ): void {
     this.theme = theme
   }
 
+  setDifficulty(difficulty:string = "easy" ): void {
+    this.difficulty = difficulty 
+  }
+
   getTheme(): any {
-    return this.theme || {"id": 1,"name": "nature"}
+    return this.theme || "nature"
   }
 
   getThemes(): Observable<any> {
     return this.http.get(this.themesUrl)
-    .map((res:Response) => res.json())
+    .map((res:Response) =>  {
+      console.log(res.json())
+      return res.json()
+    })
     .catch((error:any) => Observable.throw(error.json().error || 'Server Error'))
   }
 

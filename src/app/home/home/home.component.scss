@@ -29,6 +29,11 @@
       flex-direction: column;
       align-items: center;
 
+      .dropdowns {
+        display: flex;
+        flex-direction: column;
+      }
+
       clr-dropdown, button {
         margin: 1rem 0;
       }

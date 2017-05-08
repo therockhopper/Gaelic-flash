@@ -1,4 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ThemeService } from '../theme.service'
 import { ScoreService } from '../../results/score.service'
 
@@ -12,25 +14,30 @@ import { ScoreService } from '../../results/score.service'
   ]
 })
 export class HomeComponent implements OnInit {
-  themes: any
-  selectedTheme: any
+  themes: Array<string> 
+  difficultyLevels: Array<string> = [
+    "easy",
+    "intermediate",
+    "hard"
+  ]
+
+  selectedTheme: string 
+  selectedDifficulty: string 
   userName: string 
 
   // hold our observable subscribes so we can eaisly unsubscribe
   themesSub: any
 
   constructor( 
-    private themeService:ThemeService ,
-    private scoreService:ScoreService ,
+    private themeService:ThemeService,
+    private scoreService:ScoreService,
+    private router:Router,
    ) { }
 
    ngOnInit() {
      //get all the possible themes for the game 
      this.themesSub = this.themeService.getThemes().subscribe(
-       themes => {
-         this.themes = themes
-         this.setSelectedTheme(themes[0])
-       },
+       themes => { this.themes = themes },
        err => console.log(err) 
      )
    }
@@ -39,14 +46,12 @@ export class HomeComponent implements OnInit {
      //focus on our name input
      document.getElementById('enterName').focus()
    }
-
-   setSelectedTheme(theme: any = {}) {
-     this.selectedTheme = theme
-     this.themeService.setTheme(theme)
-   }
-
-   setUserName(name:string = "unknown"): void {
-     this.scoreService.setName(name)
+   
+   onSubmit(form: NgForm): void {
+     this.scoreService.setName(form.form.controls.name.value)
+     this.themeService.setTheme(this.selectedTheme)
+     this.themeService.setDifficulty(this.selectedDifficulty)
+     this.router.navigate(['/survey'])
    }
 
    ngOnDestroy(): void {
