@@ -12,6 +12,8 @@ import { ThemeService } from './theme.service'
 @NgModule({
   imports: [
     CommonModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     ClarityModule.forRoot(),
     FormsModule,
     HomeRoutingModule
