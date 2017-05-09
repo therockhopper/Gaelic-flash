@@ -17,7 +17,9 @@ export class ThemeService {
   }
 
   setTheme(theme:string = "nature" ): void {
+    console.log(`seting theme ${theme}`)
     this.theme = theme
+    console.log(this.theme)
   }
 
   setDifficulty(difficulty:string = "easy" ): void {
@@ -25,6 +27,7 @@ export class ThemeService {
   }
 
   getTheme(): any {
+    console.log(`getting theme ${this.theme}`)
     return this.theme || "unset"
   }
 

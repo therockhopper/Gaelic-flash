@@ -4,13 +4,14 @@ import { ScoreService } from '../score.service';
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
-  styleUrls: ['./results.component.scss']
+  styleUrls: ['./results.component.scss'],
+  providers: [ ScoreService ]
 })
 export class ResultsComponent implements OnInit {
   score:number
   name: string
 
-  constructor( private scoreService:ScoreService ) { }
+  constructor( public scoreService:ScoreService ) { }
 
   ngOnInit() {
     this.getData()

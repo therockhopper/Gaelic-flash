@@ -41,7 +41,7 @@ app.get('/api/allThemes', (req, res) => {
 
 app.get('/api/flashCard', (req, res) => {
   let themeId = req.params.id || '10c58caafa5d1e903528d958ff0018db'
-  console.log(themeId)
+  //console.log(themeId)
   db.get(themeId, (err, body) => {
     if (!err) {
       res.send(body)

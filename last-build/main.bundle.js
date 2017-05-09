@@ -1,12 +1,13 @@
 webpackJsonp([1,5],{
 
-/***/ 114:
+/***/ 115:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__theme_service__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__results_score_service__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__theme_service__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__results_score_service__ = __webpack_require__(37);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -20,10 +21,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HomeComponent = (function () {
-    function HomeComponent(themeService, scoreService) {
+    function HomeComponent(themeService, scoreService, router) {
         this.themeService = themeService;
         this.scoreService = scoreService;
+        this.router = router;
         this.difficultyLevels = [
             "easy",
             "intermediate",
@@ -33,23 +36,17 @@ var HomeComponent = (function () {
     HomeComponent.prototype.ngOnInit = function () {
         var _this = this;
         //get all the possible themes for the game 
-        this.themesSub = this.themeService.getThemes().subscribe(function (themes) {
-            _this.themes = themes;
-            _this.setSelectedTheme(themes[0]);
-        }, function (err) { return console.log(err); });
+        this.themesSub = this.themeService.getThemes().subscribe(function (themes) { _this.themes = themes; }, function (err) { return console.log(err); });
     };
     HomeComponent.prototype.ngAfterViewInit = function () {
         //focus on our name input
         document.getElementById('enterName').focus();
     };
-    HomeComponent.prototype.setSelectedTheme = function (theme) {
-        if (theme === void 0) { theme = {}; }
-        this.selectedTheme = theme;
-        this.themeService.setTheme(theme);
-    };
-    HomeComponent.prototype.setUserName = function (name) {
-        if (name === void 0) { name = "unknown"; }
-        this.scoreService.setName(name);
+    HomeComponent.prototype.onSubmit = function (form) {
+        this.scoreService.setName(form.form.controls.name.value);
+        this.themeService.setTheme(this.selectedTheme);
+        this.themeService.setDifficulty(this.selectedDifficulty);
+        this.router.navigate(['/survey']);
     };
     HomeComponent.prototype.ngOnDestroy = function () {
         // unsubscribe from all of our observables
@@ -63,73 +60,15 @@ HomeComponent = __decorate([
         template: __webpack_require__(316),
         styles: [__webpack_require__(306)],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_1__theme_service__["a" /* ThemeService */],
-            __WEBPACK_IMPORTED_MODULE_2__results_score_service__["a" /* ScoreService */],
+            __WEBPACK_IMPORTED_MODULE_2__theme_service__["a" /* ThemeService */],
+            __WEBPACK_IMPORTED_MODULE_3__results_score_service__["a" /* ScoreService */],
         ]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__theme_service__["a" /* ThemeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__theme_service__["a" /* ThemeService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__results_score_service__["a" /* ScoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__results_score_service__["a" /* ScoreService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__theme_service__["a" /* ThemeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__theme_service__["a" /* ThemeService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__results_score_service__["a" /* ScoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__results_score_service__["a" /* ScoreService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === "function" && _c || Object])
 ], HomeComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=home.component.js.map
-
-/***/ }),
-
-/***/ 115:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ThemeService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-"";
-// Import RxJS required methods
-
-
-var ThemeService = (function () {
-    function ThemeService(http) {
-        this.http = http;
-        this.themesUrl = "http://localhost:3004/api/allThemes";
-    }
-    ThemeService.prototype.setTheme = function (theme) {
-        if (theme === void 0) { theme = {}; }
-        this.theme = theme;
-    };
-    ThemeService.prototype.getTheme = function () {
-        return this.theme || { "id": 1, "name": "nature" };
-    };
-    ThemeService.prototype.getThemes = function () {
-        return this.http.get(this.themesUrl)
-            .map(function (res) { return res.json(); })
-            .catch(function (error) { return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].throw(error.json().error || 'Server Error'); });
-    };
-    return ThemeService;
-}());
-ThemeService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
-], ThemeService);
-
-var _a;
-//# sourceMappingURL=theme.service.js.map
 
 /***/ }),
 
@@ -168,7 +107,8 @@ ResultsComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
         selector: 'app-results',
         template: __webpack_require__(317),
-        styles: [__webpack_require__(307)]
+        styles: [__webpack_require__(307)],
+        providers: [__WEBPACK_IMPORTED_MODULE_1__score_service__["a" /* ScoreService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__score_service__["a" /* ScoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__score_service__["a" /* ScoreService */]) === "function" && _a || Object])
 ], ResultsComponent);
@@ -186,9 +126,9 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FlashCardService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -210,11 +150,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var FlashCardService = (function () {
     function FlashCardService(http) {
         this.http = http;
-        this.flashCardsUrl = "http://localhost:3000/flashcards/";
+        this.flashCardsUrl = "http://127.0.0.1:3004/api/flashcard";
     }
     FlashCardService.prototype.getThemeFlashCards = function (id) {
-        if (id === void 0) { id = 1; }
-        return this.http.get(this.flashCardsUrl + id)
+        return this.http.get(this.flashCardsUrl, { params: { "id": id } })
             .map(function (res) { return res.json(); })
             .catch(function (error) { return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].throw(error.json().error || 'Server Error'); });
     };
@@ -240,10 +179,10 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__flash_card_service__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__results_score_service__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_theme_service__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_theme_service__ = __webpack_require__(57);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SurveyComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -275,6 +214,7 @@ var SurveyComponent = (function () {
         this.loading = true;
         this.displayFlashCard = true;
         this.theme = this.themeService.getTheme();
+        console.log(this.theme);
         this.score = this.scoreService.getScore();
         // get the flashcard data
         this.getData();
@@ -314,7 +254,6 @@ var SurveyComponent = (function () {
         this.flashCardIndex++;
         // is this the last card?
         if (this.flashCardIndex >= this.numberOfFlashCards) {
-            // send user to results, since they have seen all the flash cards
             this.router.navigate(['/results']);
         }
         else {
@@ -389,7 +328,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(22);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -458,7 +397,7 @@ AppComponent = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_clarity_angular__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_clarity_angular__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_routing_module__ = __webpack_require__(212);
@@ -517,8 +456,8 @@ AppModule = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home_component__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home_component__ = __webpack_require__(115);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -557,10 +496,11 @@ HomeRoutingModule = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_clarity_angular__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_clarity_angular__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_routing_module__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home_component__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home_component__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__theme_service__ = __webpack_require__(57);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -568,6 +508,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -589,6 +530,9 @@ HomeModule = __decorate([
         ],
         declarations: [
             __WEBPACK_IMPORTED_MODULE_5__home_home_component__["a" /* HomeComponent */],
+        ],
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_6__theme_service__["a" /* ThemeService */],
         ]
     })
 ], HomeModule);
@@ -602,7 +546,7 @@ HomeModule = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__results_results_component__ = __webpack_require__(116);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResultsRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -798,7 +742,7 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__survey_survey_component__ = __webpack_require__(118);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SurveyRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -838,7 +782,7 @@ SurveyRoutingModule = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_clarity_angular__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_clarity_angular__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__survey_routing_module__ = __webpack_require__(221);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__flash_card_flash_card_component__ = __webpack_require__(220);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__flash_card_result_flash_card_result_component__ = __webpack_require__(219);
@@ -873,7 +817,8 @@ SurveyModule = __decorate([
         ],
         declarations: [
             __WEBPACK_IMPORTED_MODULE_4__flash_card_flash_card_component__["a" /* FlashCardComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__survey_survey_component__["a" /* SurveyComponent */], __WEBPACK_IMPORTED_MODULE_5__flash_card_result_flash_card_result_component__["a" /* FlashCardResultComponent */]
+            __WEBPACK_IMPORTED_MODULE_6__survey_survey_component__["a" /* SurveyComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__flash_card_result_flash_card_result_component__["a" /* FlashCardResultComponent */]
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_7__flash_card_service__["a" /* FlashCardService */],
@@ -928,7 +873,7 @@ exports = module.exports = __webpack_require__(10)();
 
 
 // module
-exports.push([module.i, ".home {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  height: 100%; }\n  .home .menu {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -ms-flex-pack: distribute;\n        justify-content: space-around;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    background-color: #ECF0F1;\n    height: 80vh;\n    width: 80vw;\n    max-height: 50rem;\n    max-width: 80rem; }\n    .home .menu .title {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center; }\n    .home .menu .container {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center; }\n      .home .menu .container clr-dropdown, .home .menu .container button {\n        margin: 1rem 0; }\n    .home .menu h1 {\n      margin: 0; }\n    .home .menu input {\n      height: 100%;\n      width: 100%;\n      background: none;\n      border: none;\n      font-size: 2.4rem;\n      line-height: 0;\n      text-align: left;\n      padding: 0;\n      padding-left: 1rem; }\n      .home .menu input:hover, .home .menu input:focus {\n        outline: none;\n        border-bottom: 1px solid #2980B9; }\n    .home .menu button {\n      width: 100%; }\n", ""]);
+exports.push([module.i, ".home {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  height: 100%; }\n  .home .menu {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -ms-flex-pack: distribute;\n        justify-content: space-around;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    background-color: #ECF0F1;\n    height: 80vh;\n    width: 80vw;\n    max-height: 50rem;\n    max-width: 80rem; }\n    .home .menu .title {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center; }\n    .home .menu .container {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center; }\n      .home .menu .container .dropdowns {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-orient: vertical;\n        -webkit-box-direction: normal;\n            -ms-flex-direction: column;\n                flex-direction: column; }\n      .home .menu .container clr-dropdown, .home .menu .container button {\n        margin: 1rem 0; }\n    .home .menu h1 {\n      margin: 0; }\n    .home .menu input {\n      height: 100%;\n      width: 100%;\n      background: none;\n      border: none;\n      font-size: 2.4rem;\n      line-height: 0;\n      text-align: left;\n      padding: 0;\n      padding-left: 1rem; }\n      .home .menu input:hover, .home .menu input:focus {\n        outline: none;\n        border-bottom: 1px solid #2980B9; }\n    .home .menu button {\n      width: 100%; }\n", ""]);
 
 // exports
 
@@ -1020,7 +965,7 @@ module.exports = "<router-outlet></router-outlet>\n"
 /***/ 316:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"home\">\n\n  <div class=\"menu\">\n    <form class=\"title\" #homeForm=\"ngForm\">\n      <h1>Welcome</h1>\n      <input \n          id=\"enterName\" \n          name=\"name\"\n          (blur)=\"setUserName(userName)\" \n          [(ngModel)]=\"userName\" \n          placeholder=\"Enter name\">\n    </form>\n    <div class=\"container\" *ngIf=\"themes\">\n      <clr-dropdown>\n        <button class=\"btn btn-outline-primary\" clrDropdownToggle>\n          {{ selectedTheme }}\n          <clr-icon shape=\"caret down\"></clr-icon>\n        </button>\n        <clr-dropdown-menu>\n          <a *ngFor=\"let theme of themes\" (click)=\"setSelectedTheme(theme)\" clrDropdownItem>{{ theme}}</a>\n        </clr-dropdown-menu>\n      </clr-dropdown>\n      <clr-dropdown>\n        <button class=\"btn btn-outline-primary\" clrDropdownToggle>\n          {{ selectedTheme }}\n          <clr-icon shape=\"caret down\"></clr-icon>\n        </button>\n        <clr-dropdown-menu>\n          <a *ngFor=\"let theme of themes\" (click)=\"setSelectedTheme(theme)\" clrDropdownItem>{{ theme}}</a>\n        </clr-dropdown-menu>\n      </clr-dropdown>\n      <button class=\"btn btn-danger\" routerLink=\"/results\">Leaderboards</button>\n      <button class=\"btn btn-success\" routerLink=\"/survey\">Start</button>\n    </div>\n  </div>\n\n</div>\n"
+module.exports = "<div class=\"home\">\n  <form class=\"menu\" #homeForm=\"ngForm\" (ngSubmit)=\"onSubmit(homeForm)\">\n    <div class=\"title\">\n      <h1>Welcome</h1>\n      <input \n         id=\"enterName\" \n         name=\"name\"\n         [(ngModel)]=\"userName\" \n         placeholder=\"Enter name\"\n         required>\n    </div>\n    <div class=\"container\" *ngIf=\"themes\">\n      <div class=\"dropdowns\">\n        <clr-dropdown>\n          <button class=\"btn btn-outline-primary\" type=\"button\" clrDropdownToggle>\n            Difficulty {{ selectedDifficulty}}\n            <clr-icon shape=\"caret down\"></clr-icon>\n          </button>\n          <clr-dropdown-menu>\n            <a *ngFor=\"let difficulty of difficultyLevels\" (click)=\"selectedDifficulty = difficulty\" clrDropdownItem>{{ difficulty }}</a>\n          </clr-dropdown-menu>\n        </clr-dropdown>\n        <clr-dropdown>\n          <button class=\"btn btn-outline-primary\" type=\"button\" clrDropdownToggle>\n            Theme: {{ selectedTheme }}\n            <clr-icon shape=\"caret down\"></clr-icon>\n          </button>\n          <clr-dropdown-menu>\n            <a *ngFor=\"let theme of themes\" (click)=\"selectedTheme = theme\" clrDropdownItem>{{ theme}}</a>\n          </clr-dropdown-menu>\n        </clr-dropdown>\n      </div>\n      <button class=\"btn btn-danger\" type=\"button\" routerLink=\"/results\">Leaderboards</button>\n      <button type=\"submit\" [disabled]=\"homeForm.invalid\" class=\"btn btn-success\">Start</button>\n    </div>\n  </form>\n</div>\n"
 
 /***/ }),
 
@@ -1048,7 +993,7 @@ module.exports = "<div class=\"flash-card\">\n  <div class=\"title\">\n    <h2>{
 /***/ 320:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"survey\">\n  <div class=\"info\">\n    <div class=\"score\">\n      Score: {{ score }} \n    </div>\n    <div class=\"status\" *ngIf=\"!loading\">\n      {{ flashCardIndex + 1 }} / {{ numberOfFlashCards }}\n    </div>\n    <div class=\"theme\">\n      <span>Theme: {{ theme.name }}</span>\n    </div>\n  </div>\n  <div class=\"container\" *ngIf=\"!loading\">\n    <app-flash-card \n      *ngIf=\"displayFlashCard\" \n      [flashCard]=\"flashCard\" \n      (change)=\"submitAnswer($event)\">\n    </app-flash-card>\n    <app-flash-card-result \n      *ngIf=\"!displayFlashCard\"\n      [flashCardResult]=\"flashCardResult\" \n      (change)=\"nextQuestion($event)\">\n    </app-flash-card-result>\n  </div>\n</div>\n"
+module.exports = "<div class=\"survey\">\n  <div class=\"info\">\n    <div class=\"score\">\n      Score: {{ score }} \n    </div>\n    <div class=\"status\" *ngIf=\"!loading\">\n      {{ flashCardIndex + 1 }} / {{ numberOfFlashCards }}\n    </div>\n    <div class=\"theme\">\n      <span>Theme: {{ theme }}</span>\n    </div>\n  </div>\n  <div class=\"container\" *ngIf=\"!loading\">\n    <app-flash-card \n      *ngIf=\"displayFlashCard\" \n      [flashCard]=\"flashCard\" \n      (change)=\"submitAnswer($event)\">\n    </app-flash-card>\n    <app-flash-card-result \n      *ngIf=\"!displayFlashCard\"\n      [flashCardResult]=\"flashCardResult\" \n      (change)=\"nextQuestion($event)\">\n    </app-flash-card-result>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1066,9 +1011,9 @@ module.exports = __webpack_require__(202);
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScoreService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1114,6 +1059,74 @@ ScoreService = __decorate([
 
 var _a;
 //# sourceMappingURL=score.service.js.map
+
+/***/ }),
+
+/***/ 57:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ThemeService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+"";
+// Import RxJS required methods
+
+
+var ThemeService = (function () {
+    function ThemeService(http) {
+        this.http = http;
+        this.themesUrl = "http://localhost:3004/api/allThemes";
+    }
+    ThemeService.prototype.setTheme = function (theme) {
+        if (theme === void 0) { theme = "nature"; }
+        console.log("seting theme " + theme);
+        this.theme = theme;
+        console.log(this.theme);
+    };
+    ThemeService.prototype.setDifficulty = function (difficulty) {
+        if (difficulty === void 0) { difficulty = "easy"; }
+        this.difficulty = difficulty;
+    };
+    ThemeService.prototype.getTheme = function () {
+        console.log("getting theme " + this.theme);
+        return this.theme || "unset";
+    };
+    ThemeService.prototype.getThemes = function () {
+        return this.http.get(this.themesUrl)
+            .map(function (res) {
+            console.log(res.json());
+            return res.json();
+        })
+            .catch(function (error) { return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].throw(error.json().error || 'Server Error'); });
+    };
+    return ThemeService;
+}());
+ThemeService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+], ThemeService);
+
+var _a;
+//# sourceMappingURL=theme.service.js.map
 
 /***/ })
 

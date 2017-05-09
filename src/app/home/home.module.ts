@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home/home.component';
+import { ThemeService } from './theme.service'
 
 @NgModule({
   imports: [
@@ -15,6 +16,9 @@ import { HomeComponent } from './home/home.component';
   ],
   declarations: [
     HomeComponent,
+  ],
+  providers: [
+    ThemeService,
   ]
 })
 export class HomeModule { }

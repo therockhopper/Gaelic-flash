@@ -17,7 +17,8 @@ import { FlashCardService } from './flash-card.service';
   ],
   declarations: [
     FlashCardComponent, 
-    SurveyComponent, FlashCardResultComponent
+    SurveyComponent, 
+    FlashCardResultComponent
   ],
   providers: [
     FlashCardService,
