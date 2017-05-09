@@ -35,9 +35,9 @@ export class SurveyComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private flashCardService: FlashCardService,
-    private scoreService: ScoreService,
-    private themeService: ThemeService,
+    public flashCardService: FlashCardService,
+    public scoreService: ScoreService,
+    public themeService: ThemeService,
   ) { 
     // we do not want to show the flash card till we have the data
     this.displayFlashCard = false
@@ -90,9 +90,8 @@ export class SurveyComponent implements OnInit {
     // update our index
     this.flashCardIndex++ 
 
-      // is this the last card?
-      if ( this.flashCardIndex >= this.numberOfFlashCards ) {
-      // send user to results, since they have seen all the flash cards
+    // is this the last card?
+    if ( this.flashCardIndex >= this.numberOfFlashCards ) {
       this.router.navigate(['/results'])
     } else {
       // get our new flashCard

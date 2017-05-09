@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start:local": "nodemon server.js",
-    "start:dev": "ng build --output-path=last-build/ && ng serve"
+    "start:dev": "ng build --output-path=last-build/ && ng serve",
+    "new-build": "ng build --output-path=last-build"
   },
   "private": true,
   "dependencies": {
