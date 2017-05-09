@@ -17,7 +17,7 @@ import { ScoreService } from '../../results/score.service'
     trigger('flyInOut', [
       transition(':enter', [
         style({transform: 'translateY(-100%)'}),
-        animate(300)
+        animate('300ms ease-in')
       ]),
       transition(':leave', [
         animate(300, style({transform: 'translateY(100%)'}))

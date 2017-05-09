@@ -16,14 +16,31 @@ import { ThemeService } from '../../home/theme.service';
     ThemeService,
   ],
   animations: [
-    trigger('flyInOut', [
+    trigger('cardInOut', [
       transition(':enter', [
-        style({transform: 'translateY(-100%)'}),
-        animate(300)
+        style({transform: 'translateY(100%)'}),
+        animate('300ms ease-in')
       ]),
       transition(':leave', [
-        animate(300, style({transform: 'translateY(100%)'}))
-      ])
+        style({
+          opactiy: '1',
+        }),
+        animate('255ms ease-out', style({
+          transform: 'translateY(-100%)',
+        }))
+      ]),
+    ]),
+    trigger('fadeInOut', [
+      transition(':enter', [
+        style({opacity: '0'}),
+        animate(300, style({ opactiy: '1'}))
+      ]),
+      transition(':leave', [
+        animate(0, style({ 
+          opactiy: '0',
+          display: 'none'
+        }))
+      ]),
     ])
   ]
 })
