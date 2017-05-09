@@ -1,4 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ThemeService } from '../theme.service'
