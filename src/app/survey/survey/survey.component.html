@@ -12,11 +12,13 @@
   </div>
   <div class="container" *ngIf="!loading">
     <app-flash-card 
+       [@flyInOut]
       *ngIf="displayFlashCard" 
       [flashCard]="flashCard" 
       (change)="submitAnswer($event)">
     </app-flash-card>
     <app-flash-card-result 
+       [@flyInOut]
       *ngIf="!displayFlashCard"
       [flashCardResult]="flashCardResult" 
       (change)="nextQuestion($event)">
