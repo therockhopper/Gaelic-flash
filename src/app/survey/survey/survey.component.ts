@@ -1,4 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { FlashCardService } from '../flash-card.service';
@@ -13,6 +14,34 @@ import { ThemeService } from '../../home/theme.service';
     FlashCardService,
     ScoreService,
     ThemeService,
+  ],
+  animations: [
+    trigger('cardInOut', [
+      transition(':enter', [
+        style({transform: 'translateY(100%)'}),
+        animate('300ms ease-in')
+      ]),
+      transition(':leave', [
+        style({
+          opactiy: '1',
+        }),
+        animate('255ms ease-out', style({
+          transform: 'translateY(-100%)',
+        }))
+      ]),
+    ]),
+    trigger('fadeInOut', [
+      transition(':enter', [
+        style({opacity: '0'}),
+        animate(300, style({ opactiy: '1'}))
+      ]),
+      transition(':leave', [
+        animate(0, style({ 
+          opactiy: '0',
+          display: 'none'
+        }))
+      ]),
+    ])
   ]
 })
 export class SurveyComponent implements OnInit {
