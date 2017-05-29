@@ -4,7 +4,6 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { FlashCardService } from '../flash-card.service';
 import { ScoreService } from '../../results/score.service';
-import { ThemeService } from '../../home/theme.service';
 
 @Component({
   selector: 'app-survey',
@@ -13,7 +12,6 @@ import { ThemeService } from '../../home/theme.service';
   providers: [
     FlashCardService,
     ScoreService,
-    ThemeService,
   ],
   animations: [
     trigger('cardInOut', [
@@ -66,7 +64,6 @@ export class SurveyComponent implements OnInit {
     private router: Router,
     public flashCardService: FlashCardService,
     public scoreService: ScoreService,
-    public themeService: ThemeService,
   ) { 
     // we do not want to show the flash card till we have the data
     this.displayFlashCard = false
@@ -77,8 +74,6 @@ export class SurveyComponent implements OnInit {
     this.loading = true
     this.displayFlashCard = true  
 
-    this.theme = this.themeService.getTheme()
-    console.log(this.theme)
     this.score = this.scoreService.getScore()
     // get the flashcard data
     this.getData()
