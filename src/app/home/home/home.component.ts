@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -21,20 +21,17 @@ import { Router } from '@angular/router';
   ]
 })
 export class HomeComponent implements OnInit {
+  // random number holding id of survey
+  surveyId: number
 
   constructor( private router:Router,) { }
 
   ngOnInit() {
-  }
-
-  ngAfterViewInit() {
+    this.surveyId = Math.floor(Math.random() * (5 - 1)) + 1
   }
 
   onSubmit(form: NgForm): void {
-    this.router.navigate(['/survey'])
+    this.router.navigate(['/survey', this.surveyId])
   }
 
-  ngOnDestroy(): void {
-    // unsubscribe from all of our observables
-  }
 }
