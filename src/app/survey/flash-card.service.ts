@@ -11,19 +11,12 @@ export class FlashCardService {
   flashCardsUrl: string
 
   constructor( private http:Http ) { 
-    this.flashCardsUrl = "http://127.0.0.1:3004/api/flashcard"
   }
 
-  getThemeFlashCards(id:number): Observable<any> {
-    return this.http.get(this.flashCardsUrl, {params:{"id": id }})
+  getFlashCardById( id:number = 1 ): Observable<any> {
+    return this.http.get(`./assets/${id}.json`)
     .map((res:Response) => res.json())
-    .catch((error:any) => Observable.throw(error.json().error || 'Server Error'))
-  }
-
-  getAllFlashCards(): Observable<any> {
-    return this.http.get(this.flashCardsUrl)
-    .map((res:Response) => res.json())
-    .catch((error:any) => Observable.throw(error.json().error || 'Server Error'))
+    .catch((error:any) => Observable.throw(error || 'Server Error'))
   }
 
 }

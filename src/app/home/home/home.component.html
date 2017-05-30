@@ -2,36 +2,9 @@
   <form class="menu" #homeForm="ngForm" (ngSubmit)="onSubmit(homeForm)">
     <div class="title">
       <h1>Welcome</h1>
-      <input 
-         id="enterName" 
-         name="name"
-         [(ngModel)]="userName" 
-         placeholder="Enter name"
-         required>
     </div>
-    <div class="container" *ngIf="themes">
-      <div class="dropdowns">
-        <clr-dropdown>
-          <button class="btn btn-outline-primary" type="button" clrDropdownToggle>
-            Difficulty {{ selectedDifficulty}}
-            <clr-icon shape="caret down"></clr-icon>
-          </button>
-          <clr-dropdown-menu>
-            <a *ngFor="let difficulty of difficultyLevels" (click)="selectedDifficulty = difficulty" clrDropdownItem>{{ difficulty }}</a>
-          </clr-dropdown-menu>
-        </clr-dropdown>
-        <clr-dropdown>
-          <button class="btn btn-outline-primary" type="button" clrDropdownToggle>
-            Theme: {{ selectedTheme }}
-            <clr-icon shape="caret down"></clr-icon>
-          </button>
-          <clr-dropdown-menu>
-            <a *ngFor="let theme of themes" (click)="selectedTheme = theme" clrDropdownItem>{{ theme}}</a>
-          </clr-dropdown-menu>
-        </clr-dropdown>
-      </div>
-      <button class="btn btn-danger" type="button" routerLink="/results">Leaderboards</button>
-      <button type="submit" [disabled]="homeForm.invalid" class="btn btn-success">Start</button>
+    <div class="container">
+      <button type="submit" class="btn btn-success">Start</button>
     </div>
   </form>
 </div>
