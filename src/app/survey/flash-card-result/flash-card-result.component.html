@@ -12,7 +12,7 @@
     <clr-icon class="thumbs" shape="thumbs-down" size="100"></clr-icon>
     <div class="answer">
       <h4>the correct answer is:</h4>
-      <p>{{ flashCardResult.correctAnswer.answerText }}</p>
+      <p>{{ flashCardResult.correctAnswer.title }}</p>
       <clr-icon (click)="playAudio('audio')" class="headphones" size="24" shape="headphones"></clr-icon>
         <audio id="audio" [src]="'./assets/sounds/' + flashCardResult.correctAnswer.audioUrl"></audio>
     </div>

@@ -1,12 +1,12 @@
 <div class="flash-card">
   <div class="title">
-    <h2>{{ flashCard.questionText }}</h2>
+    <h2>{{ flashCard.title }}</h2>
   </div>
   <div class="answer">
     <ul>
-      <li *ngFor="let answer of flashCard.possibleAnswers">
+      <li *ngFor="let answer of flashCard.options">
         <button (click)="submitAnswer(answer.id)" class="btn btn-success">
-          ({{ answer.id}}) {{ answer.answerText}} 
+          ({{ answer.id}}) {{ answer.title }} 
         </button>
         <audio [id]="$index + 'audio'" [src]="'./assets/sounds/' + answer.audioUrl">
         </audio>

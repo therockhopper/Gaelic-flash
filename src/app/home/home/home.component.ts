@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit(form: NgForm): void {
-    this.router.navigate(['/survey', this.surveyId])
+    this.router.navigate(['/survey', 1])
   }
 
 }

@@ -59,6 +59,12 @@ export class SurveyComponent implements OnInit {
   score: number
   theme: any 
 
+
+  // new 
+  surveyId: number
+  private paramSub: any 
+  private surveySub: any
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -74,14 +80,19 @@ export class SurveyComponent implements OnInit {
     this.loading = true
     this.displayFlashCard = true  
 
-    this.score = this.scoreService.getScore()
-    // get the flashcard data
-    this.getData()
+    // subscribe to the router params
+    this.paramSub = this.route.params.subscribe( params => {
+      this.surveyId =  +params['id']
+      console.log(this.surveyId)
+      // now that we know the ID lets get the survey
+      this.getData()
+    })
   }
 
   getData(): void {
-    this.flashCardSub = this.flashCardService.getThemeFlashCards(this.theme.id).subscribe(
+    this.flashCardSub = this.flashCardService.getFlashCardById(this.surveyId).subscribe(
       flashCards => {
+        console.log(flashCards)
         this.flashCards = flashCards
         this.flashCard = flashCards.cards[this.flashCardIndex]
         this.numberOfFlashCards = flashCards.cards.length
@@ -97,8 +108,8 @@ export class SurveyComponent implements OnInit {
     // if we got the wong answer we need to find out the right answer 
     if ( !this.flashCardResult.correct ) {
       // find the mofo 
-      let correctAnswer = this.flashCard.possibleAnswers.find((item) => {
-        if ( item.id == this.flashCard.correctAnswer ) return item
+      let correctAnswer = this.flashCard.options.find((item) => {
+        if ( item.id == this.flashCard.answerId ) return item
       })
     this.flashCardResult.correctAnswer = correctAnswer
     } else {
@@ -112,7 +123,8 @@ export class SurveyComponent implements OnInit {
 
   nextQuestion(): void {
     // update our index
-    this.flashCardIndex++ 
+    this.flashCardIndex = (this.flashCardIndex + 1) 
+    console.log(this.flashCardIndex, this.numberOfFlashCards)
 
     // is this the last card?
     if ( this.flashCardIndex >= this.numberOfFlashCards ) {
