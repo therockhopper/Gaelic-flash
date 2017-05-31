@@ -8,6 +8,7 @@
       "value": 500,
       "answerId": 2,
       "audioUrl": "",
+      "imageUrl": "forrest.jpg",
       "options": [
         {
           "id": 1,
@@ -36,6 +37,7 @@
       "value": 750,
       "answerId": 1,
       "audioUrl": "first.mp3",
+      "imageUrl": "summer.jpg",
       "options": [
         {
           "id": 1,
@@ -64,6 +66,7 @@
       "value": 1000,
       "answerId": 4,
       "audioUrl": "first.mp3",
+      "imageUrl": "winter.jpg",
       "options": [
         {
           "id": 1,
