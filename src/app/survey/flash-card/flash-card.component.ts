@@ -12,14 +12,18 @@ export class FlashCardComponent implements OnInit {
   @Output()
   change: EventEmitter<boolean> = new EventEmitter<boolean>()
 
+  sound: any 
+
   constructor() {}
 
   ngOnInit() { 
+    this.sound = document.createElement('audio')
+    this.sound.id = 'audio-player'
   }
 
-  playAudio(id: string): void {
-    let audio: any = document.getElementById(id)
-    audio.play()
+  playAudio(url: string): void {
+    this.sound.src = './assets/sounds/' + url
+    this.sound.play()
   }
 
   submitAnswer(index: number = -1): void {
