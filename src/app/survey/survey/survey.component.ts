@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, AfterViewChecked, OnDestroy } from '@angular/core';
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
@@ -62,6 +62,10 @@ export class SurveyComponent implements OnInit {
 
   // new 
   surveyId: number
+  topImgUrl: string
+  bottomImgUrl: string
+  topImage: HTMLElement
+  bottomImage: HTMLElement
   private paramSub: any 
   private surveySub: any
 
@@ -89,6 +93,11 @@ export class SurveyComponent implements OnInit {
     })
   }
 
+  ngAfterViewChecked():void {
+    this.topImage = document.getElementById('top')
+    this.bottomImage = document.getElementById('bottom')
+  }
+
   getData(): void {
     this.flashCardSub = this.flashCardService.getFlashCardById(this.surveyId).subscribe(
       flashCards => {
@@ -96,10 +105,24 @@ export class SurveyComponent implements OnInit {
         this.flashCards = flashCards
         this.flashCard = flashCards.cards[this.flashCardIndex]
         this.numberOfFlashCards = flashCards.cards.length
+        this.topImgUrl = this.flashCard.imageUrl
+        this.bottomImgUrl = this.flashCards.cards[this.flashCardIndex + 1].imageUrl
+        console.log(this.topImgUrl, this.bottomImgUrl)
         this.loading = false 
       },
       err => console.log(err)
     )
+  }
+
+  updateImageUrls():void {
+    this.topImage.classList.toggle('transparent')
+    this.bottomImage.classList.toggle('transparent')
+    // the iamge that has the transparent class, will need to get a new img src
+    if ( this.topImage.classList.contains('transparent') ) {
+      this.topImgUrl = this.flashCards.cards[this.flashCardIndex + 1].imageUrl
+    } else {
+      this.bottomImgUrl = this.flashCards.cards[this.flashCardIndex + 1].imageUrl
+    }
   }
 
   submitAnswer(result: boolean):void {
@@ -131,6 +154,7 @@ export class SurveyComponent implements OnInit {
       this.router.navigate(['/results'])
     } else {
       // get our new flashCard
+      this.updateImageUrls()
       this.flashCard = this.flashCards.cards[this.flashCardIndex]
     }
 

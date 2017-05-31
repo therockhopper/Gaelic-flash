@@ -1,5 +1,6 @@
 <div class="survey">
-  <img class="background" [src]="'./assets/images/' + flashCard.imageUrl" *ngIf="!loading">
+  <img id="top" class="background" [src]="'./assets/images/' + topImgUrl" *ngIf="!loading">
+  <img id="bottom" class="background transparent" [src]="'./assets/images/' + bottomImgUrl" *ngIf="!loading">
   <div class="info">
     <div class="score">
       Score: {{ score }} 
