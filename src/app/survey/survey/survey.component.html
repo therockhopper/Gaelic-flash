@@ -15,13 +15,13 @@
  
   <div class="container" *ngIf="!loading">
     <app-flash-card 
-       [@cardInOut]
+       class="flashCard"
        *ngIf="displayFlashCard" 
        [flashCard]="flashCard" 
        (change)="submitAnswer($event)">
     </app-flash-card>
     <app-flash-card-result 
-       [@fadeInOut]
+       class="resultCard"
        *ngIf="!displayFlashCard"
        [flashCardResult]="flashCardResult" 
        (change)="nextQuestion($event)">
