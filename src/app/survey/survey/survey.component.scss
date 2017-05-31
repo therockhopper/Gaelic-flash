@@ -10,9 +10,12 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    opacity: 0;
     background-size: cover;
     filter: blur(3px) brightness(0.5);
+
+    &-bottom {
+      opacity: 0;
+    }
   }
 
   .fadeIn {
@@ -21,10 +24,6 @@
 
   .fadeOut {
     animation: fadeIn 200ms backwards;
-  }
-
-  .transparent {
-    //opacity: 0;
   }
 
   .info {

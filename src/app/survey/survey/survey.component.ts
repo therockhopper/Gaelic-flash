@@ -72,12 +72,13 @@ export class SurveyComponent implements OnInit {
   getData(): void {
     this.flashCardSub = this.flashCardService.getFlashCardById(this.surveyId).subscribe(
       flashCards => {
-        console.log(flashCards)
         this.flashCards = flashCards
         this.flashCard = flashCards.cards[this.flashCardIndex]
         this.numberOfFlashCards = flashCards.cards.length
         this.topImgUrl = this.flashCard.imageUrl
-        this.bottomImgUrl = this.flashCards.cards[this.flashCardIndex + 1].imageUrl
+        setTimeout(() => {
+          this.bottomImgUrl = this.flashCards.cards[this.flashCardIndex + 1].imageUrl
+        },600)
         this.loading = false 
       },
       err => console.log(err)
@@ -94,13 +95,13 @@ export class SurveyComponent implements OnInit {
     // if last question no need to fetch next image 
     if ( this.flashCardIndex >= this.numberOfFlashCards - 1 ) return
 
-    // the iamge that has the transparent class, will need to get a new img src
-    if ( this.topImage.classList.contains('fadeOut') ) {
-      this.topImgUrl = this.flashCards.cards[this.flashCardIndex + 1].imageUrl
-    } else {
-      this.bottomImgUrl = this.flashCards.cards[this.flashCardIndex + 1].imageUrl
-    }
-    console.log(this.topImgUrl, this.bottomImgUrl, this.flashCardIndex)
+      // the iamge that has the transparent class, will need to get a new img src
+      if ( this.topImage.classList.contains('fadeOut') ) {
+        this.topImgUrl = this.flashCards.cards[this.flashCardIndex + 1].imageUrl
+      } else {
+        this.bottomImgUrl = this.flashCards.cards[this.flashCardIndex + 1].imageUrl
+      }
+      console.log(this.topImgUrl, this.bottomImgUrl, this.flashCardIndex)
   }
 
   submitAnswer(result: boolean):void {
