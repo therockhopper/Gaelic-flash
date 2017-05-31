@@ -78,7 +78,6 @@ export class SurveyComponent implements OnInit {
         this.numberOfFlashCards = flashCards.cards.length
         this.topImgUrl = this.flashCard.imageUrl
         this.bottomImgUrl = this.flashCards.cards[this.flashCardIndex + 1].imageUrl
-        console.log(this.topImgUrl, this.bottomImgUrl)
         this.loading = false 
       },
       err => console.log(err)
@@ -86,14 +85,22 @@ export class SurveyComponent implements OnInit {
   }
 
   updateImageUrls():void {
-    this.topImage.classList.toggle('transparent')
-    this.bottomImage.classList.toggle('transparent')
+    // toggle our animation classes for the background image
+    this.topImage.classList.toggle('fadeIn')
+    this.bottomImage.classList.toggle('fadeIn')
+    this.topImage.classList.toggle('fadeOut')
+    this.bottomImage.classList.toggle('fadeOut')
+
+    // if last question no need to fetch next image 
+    if ( this.flashCardIndex >= this.numberOfFlashCards - 1 ) return
+
     // the iamge that has the transparent class, will need to get a new img src
-    if ( this.topImage.classList.contains('transparent') ) {
+    if ( this.topImage.classList.contains('fadeOut') ) {
       this.topImgUrl = this.flashCards.cards[this.flashCardIndex + 1].imageUrl
     } else {
       this.bottomImgUrl = this.flashCards.cards[this.flashCardIndex + 1].imageUrl
     }
+    console.log(this.topImgUrl, this.bottomImgUrl, this.flashCardIndex)
   }
 
   submitAnswer(result: boolean):void {
@@ -125,8 +132,8 @@ export class SurveyComponent implements OnInit {
       this.router.navigate(['/results'])
     } else {
       // get our new flashCard
-      this.updateImageUrls()
       this.flashCard = this.flashCards.cards[this.flashCardIndex]
+      this.updateImageUrls()
     }
 
     // hide our result card and show the question

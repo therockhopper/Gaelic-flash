@@ -10,12 +10,23 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    filter: blur(5px) brightness(0.5);
-    transition: opacity .5s ease-in-out;
+    opacity: 0;
+    filter: blur(3px) brightness(0.5);
+    //animation: fadeIn .5s forwards;
+    //transition: opacity .5s ease-in-out;
+    // use animation keyframes
+  }
+
+  .fadeIn {
+    animation: fadeIn 250ms forwards;
+  }
+
+  .fadeOut {
+    animation: fadeIn 200ms backwards;
   }
 
   .transparent {
-    opacity: 0;
+    //opacity: 0;
   }
 
   .info {
@@ -42,13 +53,13 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    
+
     .flashCard {
-      animation: verticalSlide 255ms ease-out forwards;
+      animation: verticalSlide 800ms ease-out forwards;
     }
 
     .resultCard {
-      animation: fadeIn 255ms ease-out forwards;
+      animation: fadeInFlex 255ms ease-out forwards;
     }
   }
 }

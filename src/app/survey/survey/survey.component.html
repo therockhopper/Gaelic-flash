@@ -1,6 +1,6 @@
 <div class="survey">
-  <img id="top" class="background" [src]="'./assets/images/' + topImgUrl" *ngIf="!loading">
-  <img id="bottom" class="background transparent" [src]="'./assets/images/' + bottomImgUrl" *ngIf="!loading">
+  <img id="top" class="background fadeIn" [src]="'./assets/images/' + topImgUrl" *ngIf="!loading">
+  <img id="bottom" class="background fadeOut" [src]="'./assets/images/' + bottomImgUrl" *ngIf="!loading">
   <div class="info">
     <div class="score">
       Score: {{ score }} 
