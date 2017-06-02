@@ -22,7 +22,7 @@ export class SurveyComponent implements OnInit {
   loading: boolean
 
 
-  score: number
+  score: number = 0
 
   // new 
   surveyId: number
