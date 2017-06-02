@@ -1,46 +1,13 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
+import { Component, Input, OnInit, AfterViewChecked, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { FlashCardService } from '../flash-card.service';
-import { ScoreService } from '../../results/score.service';
+import { ScoreService } from '../../score.service';
 
 @Component({
   selector: 'app-survey',
   templateUrl: './survey.component.html',
   styleUrls: ['./survey.component.scss'],
-  providers: [
-    FlashCardService,
-    ScoreService,
-  ],
-  animations: [
-    trigger('cardInOut', [
-      transition(':enter', [
-        style({transform: 'translateY(100%)'}),
-        animate('300ms ease-in')
-      ]),
-      transition(':leave', [
-        style({
-          opactiy: '1',
-        }),
-        animate('255ms ease-out', style({
-          transform: 'translateY(-100%)',
-        }))
-      ]),
-    ]),
-    trigger('fadeInOut', [
-      transition(':enter', [
-        style({opacity: '0'}),
-        animate(300, style({ opactiy: '1'}))
-      ]),
-      transition(':leave', [
-        animate(0, style({ 
-          opactiy: '0',
-          display: 'none'
-        }))
-      ]),
-    ])
-  ]
 })
 export class SurveyComponent implements OnInit {
   flashCard: any
@@ -54,22 +21,19 @@ export class SurveyComponent implements OnInit {
 
   loading: boolean
 
-  flashCardSub: any // hold our obseravble 
 
-  score: number
-  theme: any 
-
+  score: number = 0
 
   // new 
   surveyId: number
   private paramSub: any 
-  private surveySub: any
+  private flashCardSub: any 
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    public flashCardService: FlashCardService,
-    public scoreService: ScoreService,
+    private flashCardService: FlashCardService,
+    private scoreService: ScoreService,
   ) { 
     // we do not want to show the flash card till we have the data
     this.displayFlashCard = false
@@ -83,7 +47,6 @@ export class SurveyComponent implements OnInit {
     // subscribe to the router params
     this.paramSub = this.route.params.subscribe( params => {
       this.surveyId =  +params['id']
-      console.log(this.surveyId)
       // now that we know the ID lets get the survey
       this.getData()
     })
@@ -92,7 +55,6 @@ export class SurveyComponent implements OnInit {
   getData(): void {
     this.flashCardSub = this.flashCardService.getFlashCardById(this.surveyId).subscribe(
       flashCards => {
-        console.log(flashCards)
         this.flashCards = flashCards
         this.flashCard = flashCards.cards[this.flashCardIndex]
         this.numberOfFlashCards = flashCards.cards.length
@@ -132,6 +94,7 @@ export class SurveyComponent implements OnInit {
     } else {
       // get our new flashCard
       this.flashCard = this.flashCards.cards[this.flashCardIndex]
+      console.log(this.flashCard)
     }
 
     // hide our result card and show the question
@@ -141,6 +104,7 @@ export class SurveyComponent implements OnInit {
   ngOnDestroy(): void {
     // unsubscribe from all of our observables
     this.flashCardSub.unsubscribe()
+    this.paramSub.unsubscribe()
   }
 
 

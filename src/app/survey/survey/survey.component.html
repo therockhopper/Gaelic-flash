@@ -1,25 +1,26 @@
 <div class="survey">
-  <div class="info">
+  <img class="background" [src]="'./assets/images/' + flashCards.backgroundUrl" *ngIf="!loading">
+  <div class="info" *ngIf="!loading">
     <div class="score">
       Score: {{ score }} 
     </div>
-    <div class="status" *ngIf="!loading">
+    <div class="status">
       {{ flashCardIndex + 1 }} / {{ numberOfFlashCards }}
     </div>
     <div class="theme">
-      <span>Theme: {{ theme }}</span>
+      <span>Theme: {{ flashCards.theme }}</span>
     </div>
   </div>
  
   <div class="container" *ngIf="!loading">
     <app-flash-card 
-       [@cardInOut]
+       class="flashCard"
        *ngIf="displayFlashCard" 
        [flashCard]="flashCard" 
        (change)="submitAnswer($event)">
     </app-flash-card>
     <app-flash-card-result 
-       [@fadeInOut]
+       class="resultCard"
        *ngIf="!displayFlashCard"
        [flashCardResult]="flashCardResult" 
        (change)="nextQuestion($event)">

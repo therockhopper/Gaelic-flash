@@ -10,6 +10,8 @@ import { SurveyModule } from './survey/survey.module';
 import { ResultsModule } from './results/results.module';
 import { AppComponent } from './app.component';
 
+import { ScoreService } from './score.service';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -24,7 +26,9 @@ import { AppComponent } from './app.component';
     ResultsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    ScoreService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

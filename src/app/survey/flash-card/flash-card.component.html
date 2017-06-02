@@ -2,23 +2,23 @@
   <div class="title">
     <h2>{{ flashCard.title }}</h2>
   </div>
+  <div class="info">
+    <img [src]="'./assets/images/' + flashCard.imageUrl" *ngIf="flashCard.imageUrl">
+    <a [href]="flashCard.link.url" *ngIf="flashCard.link">{{ flashCard.link.title }}</a>
+  </div>
   <div class="answer">
     <ul>
       <li *ngFor="let answer of flashCard.options">
         <button (click)="submitAnswer(answer.id)" class="btn btn-success">
           ({{ answer.id}}) {{ answer.title }} 
         </button>
-        <audio [id]="$index + 'audio'" [src]="'./assets/sounds/' + answer.audioUrl">
-        </audio>
-        <clr-icon (click)="playAudio($index + 'audio')" size="24" shape="headphones">
+        <clr-icon (click)="playAudio(answer.audioUrl)" size="24" shape="headphones">
         </clr-icon>
       </li>
     </ul>
   </div>
   <div class="footer">
-    <clr-icon (click)="playAudio('titleAudio')" size="24" shape="headphones">
+    <clr-icon (click)="playAudio(flashCard.audioUrl)" size="24" shape="headphones">
     </clr-icon>
-    <audio id="titleAudio" [src]="'./assets/sounds/' + flashCard.audioUrl">
-    </audio>
   </div>
 </div>

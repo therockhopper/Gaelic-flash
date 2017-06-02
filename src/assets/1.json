@@ -2,88 +2,96 @@
   "id": 1,
   "name": "test",
   "theme": "nature",
+  "backgroundUrl": "summer.jpg",
   "cards": [
     {
       "title": "first",
       "value": 500,
       "answerId": 2,
-      "audioUrl": "",
+      "audioUrl": "rooster.mp3",
+      "imageUrl": "forrest.jpg",
       "options": [
         {
           "id": 1,
           "title": "first",
-          "audioUrl": "first.mp3"
+          "audioUrl": "heartbeat.mp3"
         },
         {
           "id": 2,
           "title": "second",
-          "audioUrl": "first.mp3"
+          "audioUrl": "heartbeat.mp3"
         },
         {
           "id": 3,
           "title": "third",
-          "audioUrl": "first.mp3"
+          "audioUrl": "heartbeat.mp3"
         },
         {
           "id": 4,
           "title": "forth",
-          "audioUrl": "first.mp3"
+          "audioUrl": "heartbeat.mp3"
         }
       ]
     },
     {
-      "title": "first",
+      "title": "second",
       "value": 750,
       "answerId": 1,
-      "audioUrl": "first.mp3",
+      "audioUrl": "rooster.mp3",
+      "imageUrl": "summer.jpg",
+      "link": {
+        "title": "My awesome link",
+        "url": "www.google.ca"
+      },
       "options": [
         {
           "id": 1,
           "title": "first",
-          "audioUrl": "first.mp3"
+          "audioUrl": "heartbeat.mp3"
         },
         {
           "id": 2,
           "title": "second",
-          "audioUrl": "second.mp3"
+          "audioUrl": "heartbeat.mp3"
         },
         {
           "id": 3,
           "title": "third",
-          "aduioUrl": "third.mp3"
+          "audioUrl": "heartbeat.mp3"
         },
         {
           "id": 4,
           "title": "forth",
-          "audioUrl": "forth.mp3"
+          "audioUrl": "heartbeat.mp3"
         }
       ]
     },
     {
-      "title": "first",
+      "title": "third",
       "value": 1000,
       "answerId": 4,
-      "audioUrl": "first.mp3",
+      "audioUrl": "rooster.mp3",
+      "imageUrl": "winter.jpg",
       "options": [
         {
           "id": 1,
           "title": "first",
-          "audioUrl": "first.mp3"
+          "audioUrl": "heartbeat.mp3"
         },
         {
           "id": 2,
           "title": "second",
-          "audioUrl": "second.mp3"
+          "audioUrl": "heartbeat.mp3"
         },
         {
           "id": 3,
           "title": "third",
-          "audioUrl": "third.mp3"
+          "audioUrl": "heartbeat.mp3"
         },
         {
           "id": 4,
           "title": "forth",
-          "audioUrl": "forth.mp3"
+          "audioUrl": "heartbeat.mp3"
         }
       ]
     }

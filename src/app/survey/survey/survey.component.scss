@@ -1,7 +1,20 @@
 @import '../../../variables';
+@import '../../../animations';
 
 .survey {
+  display: flex;
+  flex-direction: column;
   height: 100%;
+
+  .background {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    filter: blur(3px) brightness(0.5);
+  }
 
   .info {
     display: flex;
@@ -27,5 +40,13 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+
+    .flashCard {
+      animation: verticalSlide 550ms ease-in forwards;
+    }
+
+    .resultCard {
+      animation: fadeInFlex 255ms ease-in forwards;
+    }
   }
 }
