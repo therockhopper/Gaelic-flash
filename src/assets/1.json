@@ -2,6 +2,7 @@
   "id": 1,
   "name": "test",
   "theme": "nature",
+  "backgroundUrl": "summer.jpg",
   "cards": [
     {
       "title": "first",
@@ -38,6 +39,10 @@
       "answerId": 1,
       "audioUrl": "rooster.mp3",
       "imageUrl": "summer.jpg",
+      "link": {
+        "title": "My awesome link",
+        "url": "www.google.ca"
+      },
       "options": [
         {
           "id": 1,

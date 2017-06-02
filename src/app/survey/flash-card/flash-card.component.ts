@@ -26,6 +26,10 @@ export class FlashCardComponent implements OnInit {
     this.sound.play()
   }
 
+  ngOnChanges(changes: any) : void {
+    console.log(changes)
+  }
+
   submitAnswer(index: number = -1): void {
     let result: boolean
     // did the user select the correct answer

@@ -14,18 +14,6 @@
     z-index: -1;
     background-size: cover;
     filter: blur(3px) brightness(0.5);
-
-    &-bottom {
-      opacity: 0;
-    }
-  }
-
-  .fadeIn {
-    animation: fadeIn 250ms forwards;
-  }
-
-  .fadeOut {
-    animation: fadeIn 200ms backwards;
   }
 
   .info {
@@ -54,11 +42,11 @@
     height: 100%;
 
     .flashCard {
-      animation: verticalSlide 800ms ease-out forwards;
+      animation: verticalSlide 550ms ease-in forwards;
     }
 
     .resultCard {
-      animation: fadeInFlex 255ms ease-out forwards;
+      animation: fadeInFlex 255ms ease-in forwards;
     }
   }
 }

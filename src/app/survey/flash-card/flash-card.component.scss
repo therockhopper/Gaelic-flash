@@ -18,6 +18,21 @@
     text-align: center;
   }
 
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      max-height: 20vh;
+      border-radius: 1rem;
+    }
+
+    a {
+      color: #000;
+    }
+  }
+
   .answer {
     display: flex;
     justify-content: center;

@@ -2,6 +2,10 @@
   <div class="title">
     <h2>{{ flashCard.title }}</h2>
   </div>
+  <div class="info">
+    <img [src]="'./assets/images/' + flashCard.imageUrl" *ngIf="flashCard.imageUrl">
+    <a [href]="flashCard.link.url" *ngIf="flashCard.link">{{ flashCard.link.title }}</a>
+  </div>
   <div class="answer">
     <ul>
       <li *ngFor="let answer of flashCard.options">
