@@ -6,19 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
-  providers: [ ],
-  animations: [
-    trigger('flyInOut', [
-      transition(':enter', [
-        style({transform: 'translateY(-100%)'}),
-        animate('300ms ease-in')
-      ]),
-      transition(':leave', [
-        animate(300, style({transform: 'translateY(100%)'}))
-      ])
-    ])
-  ]
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
   // random number holding id of survey

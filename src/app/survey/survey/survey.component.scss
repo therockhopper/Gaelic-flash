@@ -1,4 +1,5 @@
 @import '../../../variables';
+@import '../../../mixins';
 @import '../../../animations';
 
 .survey {
@@ -18,12 +19,13 @@
 
   .info {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 1rem;
     color: #fff;
 
     .score {
       margin-left: 2rem;
+      display: none;
     }
 
     .status {
@@ -31,7 +33,16 @@
 
     .theme {
       margin-right: 2rem;
+      display: none;
     }
+
+    @include tablet {
+      .theme, .score {
+        display: flex;
+      }
+      justify-content: space-between;
+    }
+
   }
 
   .container {
