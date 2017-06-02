@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { ScoreService } from '../score.service';
+import { ScoreService } from '../../score.service';
 
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
-  styleUrls: ['./results.component.scss'],
-  providers: [ ScoreService ]
+  styleUrls: ['./results.component.scss']
 })
 export class ResultsComponent implements OnInit {
   score:number
   name: string
 
-  constructor( public scoreService:ScoreService ) { }
+  constructor( private scoreService:ScoreService ) { }
 
   ngOnInit() {
     this.getData()

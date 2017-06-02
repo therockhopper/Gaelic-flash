@@ -2,16 +2,12 @@ import { Component, Input, OnInit, AfterViewChecked, OnDestroy } from '@angular/
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { FlashCardService } from '../flash-card.service';
-import { ScoreService } from '../../results/score.service';
+import { ScoreService } from '../../score.service';
 
 @Component({
   selector: 'app-survey',
   templateUrl: './survey.component.html',
   styleUrls: ['./survey.component.scss'],
-  providers: [
-    FlashCardService,
-    ScoreService,
-  ],
 })
 export class SurveyComponent implements OnInit {
   flashCard: any
@@ -36,8 +32,8 @@ export class SurveyComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    public flashCardService: FlashCardService,
-    public scoreService: ScoreService,
+    private flashCardService: FlashCardService,
+    private scoreService: ScoreService,
   ) { 
     // we do not want to show the flash card till we have the data
     this.displayFlashCard = false
