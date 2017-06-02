@@ -1,3 +1,6 @@
+@import '../../../variables';
+@import '../../../mixins';
+
 .results {
   display: flex;
   flex-direction: column;
@@ -5,18 +8,18 @@
   align-items: center;
   height: 100%;
 
-  h1, h2 {
+  h1, h2, h3 {
     color: #fff;
   }
-
-  .title {
-    margin-top: 10vh;
-  }
-
-  .score {
-  }
  
-  .footer {
-    margin-bottom: 10vh;
+  button {
+    margin: 0;
+    width: 100%;
+    color: #fff;
+    background-color: $lightBlue;
+
+    @include tablet {
+      margin: 0.67em 0; // match the h1 header
+    }
   }
 }

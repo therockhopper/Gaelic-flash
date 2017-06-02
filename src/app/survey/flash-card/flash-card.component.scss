@@ -10,10 +10,8 @@
   background-color: $white;
 
   @include tablet {
-    height: 60vh;
-    width: 80vw;
-    max-height: 60rem;
-    max-width: 80rem;
+    max-height: 70vh;
+    max-width: 90vw;
   }
 
   clr-icon {
@@ -41,6 +39,7 @@
 
   .answer {
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
     padding: 2rem;
@@ -69,6 +68,12 @@
 
         li {
           justify-content: center;
+
+          @include tablet {
+            &:nth-child(odd) {
+              padding-right: 1rem;
+            }
+          }
         }
       }
     }
