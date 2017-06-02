@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   constructor( private router:Router,) { }
 
   ngOnInit() {
-    this.surveyId = Math.floor(Math.random() * (5 - 1)) + 1
+    this.surveyId = Math.floor(Math.random() * (1 - 1)) + 1
   }
 
   onSubmit(form: NgForm): void {
