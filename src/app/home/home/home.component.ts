@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
     this.surveyId = Math.floor(Math.random() * (1 - 1)) + 1
   }
 
-  onSubmit(form: NgForm): void {
+  onSubmit(): void {
     this.router.navigate(['/survey', 1])
   }
 
