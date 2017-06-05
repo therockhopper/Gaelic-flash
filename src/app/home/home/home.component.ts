@@ -10,16 +10,16 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   // random number holding id of survey
-  surveyId: number
+  surveyId: number;
 
-  constructor( private router:Router,) { }
+  constructor( private router: Router, ) { }
 
   ngOnInit() {
-    this.surveyId = Math.floor(Math.random() * (1 - 1)) + 1
+    this.surveyId = Math.floor(Math.random() * (1 - 1)) + 1;
   }
 
   onSubmit(): void {
-    this.router.navigate(['/survey', 1])
+    this.router.navigate(['/survey', 1]);
   }
 
 }

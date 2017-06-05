@@ -16,8 +16,8 @@ import { FlashCardService } from './flash-card.service';
     SurveyRoutingModule
   ],
   declarations: [
-    FlashCardComponent, 
-    SurveyComponent, 
+    FlashCardComponent,
+    SurveyComponent,
     FlashCardResultComponent
   ],
   providers: [
