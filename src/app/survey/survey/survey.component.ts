@@ -76,7 +76,7 @@ export class SurveyComponent implements OnInit {
     this.flashCardResult.correctAnswer = correctAnswer
     } else {
       // add to the score
-      this.scoreService.updateScore(100)
+      this.scoreService.updateScore(1)
       this.score = this.scoreService.getScore()
     }
     // hide our flashCard and show the result card

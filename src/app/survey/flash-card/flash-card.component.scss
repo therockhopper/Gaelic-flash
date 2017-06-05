@@ -42,7 +42,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: 2rem .5rem;
 
     ul {
       display: flex;
@@ -56,10 +56,18 @@
         flex-basis: 50%;
         justify-content: space-between;
         align-items: center;
+        padding: .5rem;
 
-        button {
-          width: 100%;
-          text-align: left;
+        &:not(:last-child) {
+          border-bottom: 1px solid #aeaeae;
+        }
+
+        clr-icon {
+          flex: 15%;
+        }
+
+        span {
+          flex: 70%;
         }
       }
 
@@ -81,7 +89,7 @@
 
   .footer {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
 
     clr-icon {
       margin: .5rem 1rem;
