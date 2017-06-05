@@ -13,6 +13,7 @@ export class FlashCardComponent implements OnInit {
   change: EventEmitter<boolean> = new EventEmitter<boolean>()
 
   sound: any 
+  selectedId: number
 
   constructor() {}
 
