@@ -9,14 +9,13 @@
   <div class="answer">
     <ul>
       <li *ngFor="let answer of flashCard.options">
-        <clr-icon shape="circle" size="24" (click)="selectedId = answer.id" *ngIf="selectedId !== answer.id">
-        </clr-icon>
-        <clr-icon shape="check-circle" class="is-success" size="24" *ngIf="selectedId === answer.id"></clr-icon>
+        <div (click)="selectedId = answer.id">
+          <clr-icon shape="circle" size="24" *ngIf="selectedId !== answer.id"> </clr-icon>
+          <clr-icon shape="check-circle" class="is-success" size="24" *ngIf="selectedId === answer.id"></clr-icon>
+          <span> {{ answer.title }}</span>
+        </div>
 
-        <span> {{ answer.title }}</span>
-
-        <clr-icon (click)="playAudio(answer.audioUrl)" size="24" shape="headphones">
-        </clr-icon>
+        <clr-icon (click)="playAudio(answer.audioUrl)" size="24" shape="headphones"> </clr-icon>
       </li>
     </ul>
   </div>
