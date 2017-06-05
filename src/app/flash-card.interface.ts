@@ -28,8 +28,8 @@ export interface FlashCards {
 }
 
 export interface FlashCardResult {
-  'correct': boolean;
-  'correctAnswer': {};
+  correct?: boolean;
+  correctAnswer?: {};
 }
 
 

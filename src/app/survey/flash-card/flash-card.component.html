@@ -22,6 +22,6 @@
   <div class="footer">
     <clr-icon (click)="playAudio(flashCard.audioUrl)" size="24" shape="headphones">
     </clr-icon>
-    <button class="btn btn-success" (click)="submitAnswer(selectedId)">Next</button>
+    <button class="btn btn-success" [disabled]="selectedId === undefined" (click)="submitAnswer(selectedId)">an ath-ceist</button>
   </div>
 </div>

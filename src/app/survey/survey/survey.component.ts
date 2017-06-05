@@ -65,11 +65,14 @@ export class SurveyComponent implements OnInit, OnDestroy {
 
   submitAnswer(result: boolean): void {
     // did we answer correct?
+    this.flashCardResult = {}
     this.flashCardResult.correct = result;
     // if we got the wong answer we need to find out the right answer
     if ( !this.flashCardResult.correct ) {
       // find the mofo
-      const answer = this.flashCard.options.find(this.findCorrectAnswer);
+      const answer = this.flashCard.options.find((option) => {
+        return option.id === this.flashCard.answerId;
+      });
       this.flashCardResult.correctAnswer = answer;
     } else {
       // add to the score
@@ -78,10 +81,6 @@ export class SurveyComponent implements OnInit, OnDestroy {
     }
     // hide our flashCard and show the result card
     this.displayFlashCard = false;
-  }
-
-  findCorrectAnswer(option: Option): boolean {
-    return option.id === this.flashCard.answerId;
   }
 
   nextQuestion(): void {
