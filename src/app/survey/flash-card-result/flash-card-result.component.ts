@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { FlashCardResult } from '../../flash-card.interface';
 
 @Component({
   selector: 'app-flash-card-result',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class FlashCardResultComponent implements OnInit {
   @Input()
-  flashCardResult: {};
+  flashCardResult: FlashCardResult; 
 
   @Output()
   change: EventEmitter<boolean> = new EventEmitter<boolean>();
