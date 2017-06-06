@@ -9,7 +9,7 @@
       "value": 500,
       "answerId": 2,
       "audioUrl": "rooster.mp3",
-      "imageUrl": "forrest.jpg",
+      "imageUrl": "beach.jpg",
       "options": [
         {
           "id": 1,
@@ -33,7 +33,7 @@
       "value": 750,
       "answerId": 1,
       "audioUrl": "rooster.mp3",
-      "imageUrl": "summer.jpg",
+      "imageUrl": "typing.jpg",
       "link": {
         "title": "My awesome link",
         "url": "www.google.ca"
@@ -61,7 +61,7 @@
       "value": 1000,
       "answerId": 1,
       "audioUrl": "rooster.mp3",
-      "imageUrl": "winter.jpg",
+      "imageUrl": "sky-diving.jpg",
       "options": [
         {
           "id": 1,
@@ -85,7 +85,7 @@
       "value": 1000,
       "answerId": 3,
       "audioUrl": "rooster.mp3",
-      "imageUrl": "winter.jpg",
+      "imageUrl": "hatchet.jpg",
       "options": [
         {
           "id": 1,
@@ -109,7 +109,7 @@
       "value": 1000,
       "answerId": 2,
       "audioUrl": "rooster.mp3",
-      "imageUrl": "winter.jpg",
+      "imageUrl": "donan.jpg",
       "options": [
         {
           "id": 1,
@@ -133,7 +133,7 @@
       "value": 1000,
       "answerId": 1,
       "audioUrl": "rooster.mp3",
-      "imageUrl": "winter.jpg",
+      "imageUrl": "tap.jpg",
       "options": [
         {
           "id": 1,
@@ -157,7 +157,7 @@
       "value": 1000,
       "answerId": 3,
       "audioUrl": "rooster.mp3",
-      "imageUrl": "winter.jpg",
+      "imageUrl": "lake.jpg",
       "options": [
         {
           "id": 1,
@@ -205,7 +205,7 @@
       "value": 1000,
       "answerId": 1,
       "audioUrl": "rooster.mp3",
-      "imageUrl": "winter.jpg",
+      "imageUrl": "forrest.jpg",
       "options": [
         {
           "id": 1,
@@ -229,7 +229,7 @@
       "value": 1000,
       "answerId": 1,
       "audioUrl": "rooster.mp3",
-      "imageUrl": "winter.jpg",
+      "imageUrl": "shopping.jpg",
       "options": [
         {
           "id": 1,
@@ -253,7 +253,7 @@
       "value": 1000,
       "answerId": 1,
       "audioUrl": "rooster.mp3",
-      "imageUrl": "winter.jpg",
+      "imageUrl": "typing.jpg",
       "options": [
         {
           "id": 1,
@@ -277,7 +277,7 @@
       "value": 1000,
       "answerId": 3,
       "audioUrl": "rooster.mp3",
-      "imageUrl": "winter.jpg",
+      "imageUrl": "summer.jpg",
       "options": [
         {
           "id": 1,
