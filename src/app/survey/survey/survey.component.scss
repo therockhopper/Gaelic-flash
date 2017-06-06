@@ -5,7 +5,9 @@
 .survey {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100%;
+  width: 100%;
 
   .background {
     pointer-events: none;
@@ -51,6 +53,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    margin: 0;
 
     .flashCard {
       animation: verticalSlide 550ms ease-in forwards;
