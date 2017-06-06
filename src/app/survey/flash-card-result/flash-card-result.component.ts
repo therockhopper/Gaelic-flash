@@ -8,7 +8,7 @@ import { FlashCardResult } from '../../flash-card.interface';
 })
 export class FlashCardResultComponent implements OnInit {
   @Input()
-  flashCardResult: FlashCardResult; 
+  flashCardResult: FlashCardResult;
 
   @Output()
   change: EventEmitter<boolean> = new EventEmitter<boolean>();

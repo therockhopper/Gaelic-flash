@@ -65,7 +65,7 @@ export class SurveyComponent implements OnInit, OnDestroy {
 
   submitAnswer(result: boolean): void {
     // did we answer correct?
-    this.flashCardResult = {}
+    this.flashCardResult = {};
     this.flashCardResult.correct = result;
     // if we got the wong answer we need to find out the right answer
     if ( !this.flashCardResult.correct ) {
