@@ -1,13 +1,13 @@
-<div class="flash-card">
-  <div class="title">
-    <h2>{{ flashCard.title }}</h2>
-  </div>
-  <div class="info">
+<div class="card">
+  <div class="card-img">
     <img [src]="'./assets/images/' + flashCard.imageUrl" *ngIf="flashCard.imageUrl">
-    <a [href]="flashCard.link.url" *ngIf="flashCard.link">{{ flashCard.link.title }}</a>
   </div>
-  <div class="answer">
-    <ul>
+  <div class="card-block">
+    <h2 class="card-title title">
+      {{ flashCard.title }}
+      <clr-icon (click)="playAudio(flashCard.audioUrl)" size="24" shape="headphones"></clr-icon>
+    </h2>
+    <ul class="card-text options">
       <li *ngFor="let answer of flashCard.options">
         <div (click)="selectedId = answer.id">
           <clr-icon shape="circle" size="24" *ngIf="selectedId !== answer.id"> </clr-icon>
@@ -19,9 +19,7 @@
       </li>
     </ul>
   </div>
-  <div class="footer">
-    <clr-icon (click)="playAudio(flashCard.audioUrl)" size="24" shape="headphones">
-    </clr-icon>
+  <div class="card-footer">
     <button class="btn btn-success" [disabled]="selectedId === undefined" (click)="submitAnswer(selectedId)">an ath-ceist</button>
   </div>
 </div>

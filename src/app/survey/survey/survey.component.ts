@@ -86,7 +86,6 @@ export class SurveyComponent implements OnInit, OnDestroy {
   nextQuestion(): void {
     // update our index
     this.flashCardIndex = (this.flashCardIndex + 1);
-    console.log(this.flashCardIndex, this.numberOfFlashCards);
 
     // is this the last card?
     if ( this.flashCardIndex >= this.numberOfFlashCards ) {
@@ -94,7 +93,6 @@ export class SurveyComponent implements OnInit, OnDestroy {
     } else {
       // get our new flashCard
       this.flashCard = this.flashCards.cards[this.flashCardIndex];
-      console.log(this.flashCard);
     }
 
     // hide our result card and show the question

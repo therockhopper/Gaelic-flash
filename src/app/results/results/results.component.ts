@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ScoreService } from '../../score.service';
+import { FlashCardService } from '../../survey/flash-card.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,8 +12,9 @@ export class ResultsComponent implements OnInit {
   score: number;
   name: string;
   surveyId: number;
+  numberOfCards: number;
 
-  constructor( private scoreService: ScoreService, private router: Router, ) { }
+  constructor( private scoreService: ScoreService, private router: Router, private flashCardService: FlashCardService ) { }
 
   ngOnInit() {
     this.getData();
@@ -21,6 +23,7 @@ export class ResultsComponent implements OnInit {
 
   getData(): void {
     this.score = this.scoreService.getScore();
+    this.numberOfCards = this.flashCardService.getNumberOfCards();
   }
 
   onSubmit(): void {
