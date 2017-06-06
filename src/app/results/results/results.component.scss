@@ -4,16 +4,22 @@
 .results {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 100%;
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
   h1, h2, h3 {
     color: #fff;
   }
  
   button {
-    margin: 0;
     width: 100%;
     color: #fff;
     background-color: $lightBlue;

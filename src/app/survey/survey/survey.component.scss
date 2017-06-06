@@ -21,6 +21,7 @@
 
   .info {
     display: flex;
+    width: 100%;
     justify-content: center;
     margin-top: 1rem;
     color: #fff;
@@ -56,7 +57,7 @@
     margin: 0;
 
     .flashCard {
-      animation: verticalSlide 550ms ease-in forwards;
+      animation: verticalSlide 400ms ease-in forwards;
     }
 
     .resultCard {
