@@ -1,15 +1,11 @@
 <div class="results">
 
-  <div class="title">
-    <h1>Results</h1>
-  </div>
-  
-  <div class="score">
-    <h2>{{ score }}</h2>
-  </div>
+  <div class="container">
+    <h1>An Sgòr Agaibh</h1>
 
-  <div class="footer">
-    <button routerLink="/survey/1" class="btn btn-success">Try Again?</button>
+    <h2>{{ score }} / {{ numberOfCards }}</h2>
+
+    <button (click)="onSubmit()" class="btn btn-success">a-rithist?</button>
   </div>
 
 </div>

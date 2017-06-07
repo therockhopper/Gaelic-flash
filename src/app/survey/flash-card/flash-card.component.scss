@@ -1,63 +1,60 @@
 @import '../../../variables';
+@import '../../../mixins';
 
-.flash-card {
+.title {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+  clr-icon { 
+    margin-left: 1rem;
+    cursor: pointer; 
+  }
+}
+
+.img {
+  img {
+    max-height: 50vh;
+    object-fit: cover;
+  }
+}
+
+.options {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 60vh;
-  width: 80vw;
-  max-height: 60rem;
-  max-width: 80rem;
-  background-color: $white;
+  list-style: none;
 
-  clr-icon {
-    cursor: pointer;
-  }
-
-  .title {
-    text-align: center;
-  }
-
-  .info {
+  li {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    padding: .5rem 0;
 
-    img {
-      max-height: 20vh;
-      border-radius: 1rem;
+    &:not(:last-child) {
+      border-bottom: 1px solid #aeaeae;
     }
 
-    a {
-      color: #000;
-    }
-  }
-
-  .answer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    ul {
+    div {
       display: flex;
-      flex-wrap: wrap;
-      list-style: none;
+      align-items: center;
+      cursor: pointer;
 
-      li {
-        display: flex;
-        flex-basis: 50%;
-        justify-content: center;
-        align-items: center;
+      clr-icon {
+        margin-left: 0;
+        margin-right: 1rem;
       }
     }
-  }
-
-  .footer {
-    display: flex;
-    justify-content: flex-end;
-
     clr-icon {
-      margin-right: 1rem;
+      margin-left: 1rem;
+      cursor: pointer;
     }
+
+  }
+}
+
+.card-footer {
+  .active {
+    background-color: $lightBlue;
   }
 }

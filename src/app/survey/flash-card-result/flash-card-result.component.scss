@@ -1,3 +1,6 @@
+@import '../../../variables';
+@import '../../../mixins';
+
 .flashCardResult {
     display: flex;
     flex-direction: column;
@@ -21,8 +24,8 @@
       align-items: center;
       color: #fff;
 
-      span {
-        font-size: 10rem; // same size as svg
+      span, clr-icon {
+        font-size: 6vw; // same size as svg
       }
     }
   }
@@ -38,6 +41,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      text-align: center;
       color: #fff;
 
       h4 {
@@ -54,6 +58,7 @@
   button {
     margin-top: 2rem;
     width: 60vw;
+    background-color: $lightBlue;
     max-width: 30rem;
   }
 }

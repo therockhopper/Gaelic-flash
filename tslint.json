@@ -3,6 +3,9 @@
     "node_modules/codelyzer"
   ],
   "rules": {
+    "no-any": true,
+    "no-empty": true,
+    "no-eval": true,
     "callable-types": true,
     "class-name": true,
     "comment-format": [

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { FlashCardResult } from '../../flash-card.interface';
 
 @Component({
   selector: 'app-flash-card-result',
@@ -7,28 +8,28 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class FlashCardResultComponent implements OnInit {
   @Input()
-  flashCardResult: any
+  flashCardResult: FlashCardResult;
 
   @Output()
-  change: EventEmitter<boolean> = new EventEmitter<boolean>()
+  change: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  sound: any
+  sound: HTMLAudioElement;
 
   constructor() { }
 
   ngOnInit() {
-    this.sound = document.createElement('audio')
-    this.sound.id = 'audio-player'
+    this.sound = document.createElement('audio');
+    this.sound.id = 'audio-player';
   }
 
   playAudio(url: string): void {
-    this.sound.src = './assets/sounds/' + url
-    this.sound.play()
+    this.sound.src = './assets/sounds/' + url;
+    this.sound.play();
   }
 
   close(): void {
     // update our parent
-    this.change.emit()
+    this.change.emit();
   }
 
 }

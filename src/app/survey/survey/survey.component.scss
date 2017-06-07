@@ -1,10 +1,13 @@
 @import '../../../variables';
+@import '../../../mixins';
 @import '../../../animations';
 
 .survey {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100%;
+  width: 100%;
 
   .background {
     pointer-events: none;
@@ -13,17 +16,19 @@
     height: 100%;
     z-index: -1;
     background-size: cover;
-    filter: blur(3px) brightness(0.5);
+    filter: brightness(0.5);
   }
 
   .info {
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+    justify-content: center;
     margin-top: 1rem;
     color: #fff;
 
     .score {
       margin-left: 2rem;
+      display: none;
     }
 
     .status {
@@ -31,7 +36,16 @@
 
     .theme {
       margin-right: 2rem;
+      display: none;
     }
+
+    @include tablet {
+      .theme, .score {
+        display: flex;
+      }
+      justify-content: space-between;
+    }
+
   }
 
   .container {
@@ -40,9 +54,10 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    margin: 0;
 
     .flashCard {
-      animation: verticalSlide 550ms ease-in forwards;
+      animation: verticalSlide 400ms ease-in forwards;
     }
 
     .resultCard {
