@@ -6,13 +6,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:aot": "ng build --prod --aot && npm run precache",
+    "precache": "sw-precache --verbose --config=sw-precache-config.js",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "start:local": "nodemon server.js",
-    "start:dev": "ng build --output-path=last-build/ && ng serve",
-    "new-build": "ng build --prod --output-path=last-build",
-    "release": "ng build --prod --base-href '/Gaelic-flash/' && ngh"
+    "e2e": "ng e2e"
   },
   "pre-commit": [],
   "private": true,
@@ -56,6 +54,7 @@
     "nodemon": "^1.11.0",
     "pre-commit": "^1.2.2",
     "protractor": "~5.1.0",
+    "sw-precache": "^5.1.1",
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
     "typescript": "~2.2.0"
