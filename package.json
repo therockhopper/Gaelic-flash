@@ -11,7 +11,7 @@
     "e2e": "ng e2e",
     "start:local": "nodemon server.js",
     "start:dev": "ng build --output-path=last-build/ && ng serve",
-    "new-build": "ng build --output-path=last-build",
+    "new-build": "ng build --prod --output-path=last-build",
     "release": "ng build --prod --base-href '/Gaelic-flash/' && ngh"
   },
   "pre-commit": [],
