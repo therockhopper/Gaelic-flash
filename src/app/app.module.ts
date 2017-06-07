@@ -17,7 +17,9 @@ import { ScoreService } from './score.service';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({
+      appId: 'flash-universal'
+    }),
     ClarityModule.forRoot(),
     FormsModule,
     HttpModule,
