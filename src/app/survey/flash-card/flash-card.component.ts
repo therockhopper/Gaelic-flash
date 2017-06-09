@@ -16,16 +16,31 @@ export class FlashCardComponent implements OnInit {
   sound: HTMLAudioElement;
   selectedId: number;
 
+  timeLeft:number = 25;
+  countDownTimer: number
+
   constructor() {}
 
   ngOnInit() {
     this.sound = document.createElement('audio');
     this.sound.id = 'audio-player';
+    this.countDownTimer = setInterval( () => this.countDown(),1000)
   }
 
   playAudio(url: string): void {
     this.sound.src = './assets/sounds/' + url;
     this.sound.play();
+  }
+
+  countDown(): void {
+    this.timeLeft = this.timeLeft - 1;
+
+    // if we are done counting down, lets stop
+    // and send the user to the next slide
+    if ( this.timeLeft < 1 ) {
+     clearInterval(this.countDownTimer);
+     this.submitAnswer(-1);
+    }
   }
 
   submitAnswer(index: number = -1): void {
