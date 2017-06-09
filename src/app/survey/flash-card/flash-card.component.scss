@@ -54,14 +54,16 @@
 }
 
 .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   .active {
     background-color: $lightBlue;
   }
-}
 
-.timer {
-  h1 {
-    color: #fff;
-    font-weight: 600;
+  .timer {
+    margin: 0;
+    color: $lightBlue;
   }
 }
