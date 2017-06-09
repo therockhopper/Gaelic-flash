@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { HomeComponent } from './home/home.component';
   ],
   declarations: [
     HomeComponent,
+    DashboardComponent,
   ],
   providers: [ ]
 })
