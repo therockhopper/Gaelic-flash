@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:aot": "ng build --prod --aot",
+    "build:aot": "ng build --prod --aot && npm run precache",
     "precache": "sw-precache --verbose --config=sw-precache-config.js",
     "test": "ng test",
     "lint": "ng lint",
