@@ -5,35 +5,35 @@
   "backgroundUrl": "summer.jpg",
   "cards": [
     {
-      "title": "Dè rinn Iain a-raoir?",
+      "title": "Dé rinn Iain a-raoir?",
       "value": 500,
       "answerId": 2,
       "audioUrl": "1/1.m4a",
-      "imageUrl": "beach.jpg",
+      "imageUrl": "workingoncomputerthengoingtstore.jpg",
       "options": [
         {
           "id": 1,
-          "title": "Bha i ag obair anns an choimpiutair, an uair sin bha i a’dol dhan stòr.",
+          "title": "Bha i ag obair air an choimpiutair, an uair sin bha i a’dol dhan stòr.",
           "audioUrl": "1/1a.m4a"
         },
         {
           "id": 2,
-          "title": "Dh’obair e air an choimpiutair, an uair sin, chaidh e dhan stòr.",
+          "title": "Dh’obraich e air an choimpiutair, an uair sin, chaidh e dhan stòr.",
           "audioUrl": "1/1b.m4a"
         },
         {
           "id": 3,
-          "title": "Bha e ag obair agus chaidh e shìos an rathad.",
+          "title": "Bha e ag obair agus chaidh e sìos an rathad.",
           "audioUrl": "1/1c.m4a"
         }
       ]
     },
     {
-      "title": "Dè tha i dèanamh?",
+      "title": "Dé tha i a Déanamh?",
       "value": 750,
       "answerId": 1,
       "audioUrl": "2/2.m4a",
-      "imageUrl": "typing.jpg",
+      "imageUrl": "sweeping.jpg",
       "link": {
         "title": "My awesome link",
         "url": "www.google.ca"
@@ -41,17 +41,17 @@
       "options": [
         {
           "id": 1,
-          "title": "Tha i a suabag an làr",
+          "title": "Tha i a suabag an t-ulàr",
           "audioUrl": "2/2a.m4a"
         },
         {
           "id": 2,
-          "title": "Tha i a glan an làr.",
+          "title": "Tha i a glan an t-ulàr.",
           "audioUrl": "2/2b.m4a"
         },
         {
           "id": 3,
-          "title": "Chan eil i a dèanamh rud sam bith.",
+          "title": "Chan eil i a Déanamh rud sam bith.",
           "audioUrl": "2/2c.m4a"
         }
       ]
@@ -61,7 +61,7 @@
       "value": 1000,
       "answerId": 1,
       "audioUrl": "3/3.m4a",
-      "imageUrl": "sky-diving.jpg",
+      "imageUrl": "happyface.jpg",
       "options": [
         {
           "id": 1,
@@ -81,11 +81,11 @@
       ]
     },
     {
-      "title": "Dè rinn thu?",
+      "title": "Dé rinn thu?",
       "value": 1000,
       "answerId": 3,
       "audioUrl": "4/4.m4a",
-      "imageUrl": "hatchet.jpg",
+      "imageUrl": "foldedsweater.jpg",
       "options": [
         {
           "id": 1,
@@ -105,11 +105,11 @@
       ]
     },
     {
-      "title": "Dè tha seo?",
+      "title": "Dé tha seo?",
       "value": 1000,
       "answerId": 2,
       "audioUrl": "5/5.m4a",
-      "imageUrl": "donan.jpg",
+      "imageUrl": "hatchet.jpg",
       "options": [
         {
           "id": 1,
@@ -129,7 +129,7 @@
       ]
     },
     {
-      "title": "Dè tha seo??",
+      "title": "Dé tha seo??",
       "value": 1000,
       "answerId": 1,
       "audioUrl": "6/6.m4a",
@@ -153,11 +153,11 @@
       ]
     },
     {
-      "title": "Dè tha seo?",
+      "title": "Dé tha seo?",
       "value": 1000,
       "answerId": 3,
       "audioUrl": "7/7.m4a",
-      "imageUrl": "lake.jpg",
+      "imageUrl": "towel.jpg",
       "options": [
         {
           "id": 1,
@@ -177,35 +177,35 @@
       ]
     },
     {
-      "title": "Dè tha thu dèanamh?",
+      "title": "Dé tha thu a'déanamh?",
       "value": 1000,
       "answerId": 3,
       "audioUrl": "8/8.m4a",
-      "imageUrl": "winter.jpg",
+      "imageUrl": "makingbed.jpg",
       "options": [
         {
           "id": 1,
-          "title": "",
+          "title": "Nì a leabhaidh agam.",
           "audioUrl": "8/8a.m4a"
         },
         {
           "id": 2,
-          "title": "",
+          "title": "Tha mi a cuir anart air a bhobstair.",
           "audioUrl": "8/8b.m4a"
         },
         {
           "id": 3,
-          "title": "",
+          "title": "Chuir mi anart air a bhobstair.",
           "audioUrl": "8/8c.m4a"
         }
       ]
     },
     {
-      "title": "Dè nì mi leis a seo?",
+      "title": "Dé nì mi leis a seo?",
       "value": 1000,
       "answerId": 1,
       "audioUrl": "9/9.m4a",
-      "imageUrl": "forrest.jpg",
+      "imageUrl": "facecloth.jpg",
       "options": [
         {
           "id": 1,
@@ -225,11 +225,11 @@
       ]
     },
     {
-      "title": "Dè dh’itheadh tu?",
+      "title": "Dé dh’itheadh tu?",
       "value": 1000,
       "answerId": 1,
       "audioUrl": "10/10.m4a",
-      "imageUrl": "shopping.jpg",
+      "imageUrl": "redmeat.jpg",
       "options": [
         {
           "id": 1,
@@ -249,11 +249,11 @@
       ]
     },
     {
-      "title": "Dè bhiodh tu a dèanamh nuair a bha thu beag?",
+      "title": "Dé bhiodh tu a'déanamh nuair a bha thu beag?",
       "value": 1000,
       "answerId": 1,
       "audioUrl": "11/11.m4a",
-      "imageUrl": "typing.jpg",
+      "imageUrl": "bed.jpg",
       "options": [
         {
           "id": 1,
@@ -273,11 +273,11 @@
       ]
     },
     {
-      "title": "Dè tha ceist ceàrr?",
+      "title": "Dé tha ceist ceàrr?",
       "value": 1000,
       "answerId": 3,
       "audioUrl": "12/12.m4a",
-      "imageUrl": "summer.jpg",
+      "imageUrl": "noimage.jpg",
       "options": [
         {
           "id": 1,
@@ -301,7 +301,7 @@
       "value": 1000,
       "answerId": 2,
       "audioUrl": "13/13.m4a",
-      "imageUrl": "winter.jpg",
+      "imageUrl": "cartoonoffamily.jpg",
       "options": [
         {
           "id": 1,
@@ -325,7 +325,7 @@
       "value": 1000,
       "answerId": 2,
       "audioUrl": "14/14.m4a",
-      "imageUrl": "winter.jpg",
+      "imageUrl": "cleantable.jpg",
       "options": [
         {
           "id": 1,
@@ -349,7 +349,7 @@
       "value": 1000,
       "answerId": 3,
       "audioUrl": "15/15.m4a",
-      "imageUrl": "winter.jpg",
+      "imageUrl": "beach.jpg",
       "options": [
         {
           "id": 1,
@@ -369,11 +369,11 @@
       ]
     },
     {
-      "title": "Dè tha ceist ceàrr?",
+      "title": "Dé tha ceist ceàrr?",
       "value": 1000,
       "answerId": 1,
       "audioUrl": "16/16.m4a",
-      "imageUrl": "winter.jpg",
+      "imageUrl": "noimage.jpg",
       "options": [
         {
           "id": 1,
@@ -387,17 +387,17 @@
         },
         {
           "id": 3,
-          "title": "Faodaigh tu cù a-muigh.",
+          "title": "Faodaigh tu a cù a-muigh.",
           "audioUrl": "16/16c.m4a"
         }
       ]
     },
     {
-      "title": "Dè bha ceàrr leis na nigheannan?",
+      "title": "Dé bha ceàrr leis na h-igheannan?",
       "value": 1000,
       "answerId": 1,
       "audioUrl": "17/17.m4a",
-      "imageUrl": "winter.jpg",
+      "imageUrl": "story.jpg",
       "options": [
         {
           "id": 1,
@@ -411,7 +411,7 @@
         },
         {
           "id": 3,
-          "title": "Bha na h-igheannna air chall.",
+          "title": "Bha na h-igheannnan air chall.",
           "audioUrl": "17/17c.m4a"
         }
       ]
@@ -421,7 +421,7 @@
       "value": 1000,
       "answerId": 3,
       "audioUrl": "18/18.m4a",
-      "imageUrl": "winter.jpg",
+      "imageUrl": "sky-diving.jpg",
       "options": [
         {
           "id": 1,
@@ -445,7 +445,7 @@
       "value": 1000,
       "answerId": 1,
       "audioUrl": "19/19.m4a",
-      "imageUrl": "winter.jpg",
+      "imageUrl": "getmilkfromfridge.jpg",
       "options": [
         {
           "id": 1,
@@ -465,25 +465,25 @@
       ]
     },
     {
-      "title": "Blank",
+      "title": "Dé rinn thu leis an seacaid?",
       "value": 1000,
-      "answerId": 1,
+      "answerId": 2,
       "audioUrl": "20/20.m4a",
-      "imageUrl": "winter.jpg",
+      "imageUrl": "Jacekt/washer.jpg",
       "options": [
         {
           "id": 1,
-          "title": "tha",
+          "title": "Thog mi seacaid às a bhasgaid agus chuir mi anns an inneal nigheadaireachd e.",
           "audioUrl": "20/20a.m4a"
         },
         {
           "id": 2,
-          "title": "bha",
+          "title": "Thug mi seacaid às a bhasgaid agus chuir mi anns an inneal nigheadaireachd i.",
           "audioUrl": "20/20b.m4a"
         },
         {
           "id": 3,
-          "title": "bi",
+          "title": "Fhuair mi seacaid às a bhasgaid agus chuir mi anns an inneal nigheadaireach iad.",
           "audioUrl": "20/20c.m4a"
         }
       ]

@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve && npm run precache",
     "build": "ng build",
     "build:aot": "ng build --prod --aot && npm run precache",
     "precache": "sw-precache --verbose --config=sw-precache-config.js",
