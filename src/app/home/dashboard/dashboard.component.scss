@@ -1,0 +1,47 @@
+@import '../../../variables';
+@import '../../../mixins';
+
+.main-container {
+  .header {
+  }
+
+  .content-container {
+
+    .content-area {
+      padding: 0;
+
+      .theatre {
+        position:relative;
+        display:inline-block;
+        width:100%; 
+        height:100%;
+
+        .vid {
+          position: absolute; 
+          top: 0; 
+          left:0;
+          width: 100%; 
+          height: 100%; 
+
+          video {
+            width: 100%;
+          }
+        }    
+      }
+
+      .content {
+        position:absolute;
+        height: 100%;
+        width: 100%;
+        top:0; 
+        left:0;
+
+        h1 {
+          color: #fff;
+        }
+      }
+
+    }
+  }
+
+}
