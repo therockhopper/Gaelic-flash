@@ -17,7 +17,6 @@
   h1 {
     color: #fff;
     font-weight: 600;
-    margin-bottom: 2rem;
   }
 
   p {
@@ -39,6 +38,7 @@
     width: 100%;
     color: #fff;
     background-color: $lightBlue;
+    margin-top: 2rem;
 
     @include tablet {
       margin: 0.67em 0; // match the h1 header
