@@ -13,12 +13,12 @@
       "options": [
         {
           "id": 1,
-          "title": "Bha i ag obair air an choimpiutair, an uair sin bha i a’dol dhan stòr.",
+          "title": "Bha i ag obair air a'choimpiutair, an uair sin bha i a’dol dhan stòr.",
           "audioUrl": "1/1a.m4a"
         },
         {
           "id": 2,
-          "title": "Dh’obraich e air an choimpiutair, an uair sin, chaidh e dhan stòr.",
+          "title": "Dh’obraich e air a'choimpiutair, an uair sin, chaidh e dhan stòr.",
           "audioUrl": "1/1b.m4a"
         },
         {
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "title": "Dé tha i a Déanamh?",
+      "title": "Dé tha i a'déanadh?",
       "value": 750,
       "answerId": 1,
       "audioUrl": "2/2.m4a",
@@ -41,17 +41,17 @@
       "options": [
         {
           "id": 1,
-          "title": "Tha i a suabag an t-ulàr",
+          "title": "Tha i a'sguabadh an ulàr",
           "audioUrl": "2/2a.m4a"
         },
         {
           "id": 2,
-          "title": "Tha i a glan an t-ulàr.",
+          "title": "Tha i a'glanadh an ulàr.",
           "audioUrl": "2/2b.m4a"
         },
         {
           "id": 3,
-          "title": "Chan eil i a Déanamh rud sam bith.",
+          "title": "Chan eil i a'déanamh rud sam bith.",
           "audioUrl": "2/2c.m4a"
         }
       ]
@@ -65,7 +65,7 @@
       "options": [
         {
           "id": 1,
-          "title": "Tha i a faireachdainn gu math",
+          "title": "Tha i a'faireachdainn gu math",
           "audioUrl": "3/3a.m4a"
         },
         {
@@ -89,17 +89,17 @@
       "options": [
         {
           "id": 1,
-          "title": "Phaisg mi an geansaidh agus chuir mi anns a bhasaid i.",
+          "title": "Phaisg mi an geansaidh agus chuir mi anns a'bhasgaid i.",
           "audioUrl": "4/4a.m4a"
         },
         {
           "id": 2,
-          "title": "Phaisg mi an geansaidh agus chuir mi anns a bhasaid iad.",
+          "title": "Phaisg mi an geansaidh agus chuir mi anns a'bhasgaid iad.",
           "audioUrl": "4/4b.m4a"
         },
         {
           "id": 3,
-          "title": "Phaisg mi an geansaidh agus chuir mi anns a bhasaid e.",
+          "title": "Phaisg mi an geansaidh agus chuir mi anns a'bhasgaid e.",
           "audioUrl": "4/4c.m4a"
         }
       ]
@@ -166,7 +166,7 @@
         },
         {
           "id": 2,
-          "title": "An solust.",
+          "title": "An t-sholust.",
           "audioUrl": "7/7b.m4a"
         },
         {
@@ -185,17 +185,17 @@
       "options": [
         {
           "id": 1,
-          "title": "Nì a leabhaidh agam.",
+          "title": "Nì mi an leabhaidh agam.",
           "audioUrl": "8/8a.m4a"
         },
         {
           "id": 2,
-          "title": "Tha mi a cuir anart air a bhobstair.",
+          "title": "Tha mi a'cuir anart air a'bhobhstair.",
           "audioUrl": "8/8b.m4a"
         },
         {
           "id": 3,
-          "title": "Chuir mi anart air a bhobstair.",
+          "title": "Chuir mi anart air a'bhobhstair.",
           "audioUrl": "8/8c.m4a"
         }
       ]
@@ -209,23 +209,23 @@
       "options": [
         {
           "id": 1,
-          "title": "Bith thu a glanadh t-aodann.",
+          "title": "Bidh thu a glanadh t-aodann.",
           "audioUrl": "9/9a.m4a"
         },
         {
           "id": 2,
-          "title": "Bith thu ag obaireadh leis a seo.",
+          "title": "Bidh thu ag obaireadh leis a seo.",
           "audioUrl": "9/9b.m4a"
         },
         {
           "id": 3,
-          "title": "Bith thu a chluicheadh leis a seo.",
+          "title": "Bidh thu a chluicheadh leis a seo.",
           "audioUrl": "9/9c.m4a"
         }
       ]
     },
     {
-      "title": "Dé dh’itheadh tu?",
+      "title": "Dé a dh’itheadh tu?",
       "value": 1000,
       "answerId": 1,
       "audioUrl": "10/10.m4a",
@@ -273,7 +273,7 @@
       ]
     },
     {
-      "title": "Dé tha ceist ceàrr?",
+      "title": "Dé an ceist a tha ceàrr?",
       "value": 1000,
       "answerId": 3,
       "audioUrl": "12/12.m4a",
@@ -286,7 +286,7 @@
         },
         {
           "id": 2,
-          "title": "An urrainn dhut seinn air a’phìob?",
+          "title": "An urrainn dhut a’phìob a sheinn?",
           "audioUrl": "12/12b.m4a"
         },
         {
@@ -297,7 +297,7 @@
       ]
     },
     {
-      "title": "Seo an teachlach aig Màiri. Ciamar a tha e a càirdeach ri Màiri?",
+      "title": "Seo an teaghlach aig Màiri. Ciamar a tha e a càirdeach ri Màiri?",
       "value": 1000,
       "answerId": 2,
       "audioUrl": "13/13.m4a",
@@ -345,7 +345,7 @@
       ]
     },
     {
-      "title": "Cia mheud duine ann?",
+      "title": "Cia mheud duine a th'ann an dealbh?",
       "value": 1000,
       "answerId": 3,
       "audioUrl": "15/15.m4a",
@@ -363,13 +363,13 @@
         },
         {
           "id": 3,
-          "title": "Tha triùir duine ann.",
+          "title": "Tha triùir ann.",
           "audioUrl": "15/15c.m4a"
         }
       ]
     },
     {
-      "title": "Dé tha ceist ceàrr?",
+      "title": "Dé an ceist a tha ceàrr?",
       "value": 1000,
       "answerId": 1,
       "audioUrl": "16/16.m4a",
@@ -382,12 +382,12 @@
         },
         {
           "id": 2,
-          "title": "Feimaidh mi mo càr a ghlanadh.",
+          "title": "Feimaidh mi an càr agam a ghlanadh.",
           "audioUrl": "16/16b.m4a"
         },
         {
           "id": 3,
-          "title": "Faodaigh tu a cù a-muigh.",
+          "title": "Faodaigh tu an cù a leigeil a-mach.",
           "audioUrl": "16/16c.m4a"
         }
       ]
@@ -406,7 +406,7 @@
         },
         {
           "id": 2,
-          "title": "Bha crodh aca dh’fhalbh às a feurach. ",
+          "title": "Dh’fhalbhBha an crodh aca às a'fheurach. ",
           "audioUrl": "17/17b.m4a"
         },
         {
@@ -417,7 +417,7 @@
       ]
     },
     {
-      "title": "Am bitheadh tu deònach leum a mach a itealan?",
+      "title": "Am bitheadh tu deònach leum a-mach á itealan?",
       "value": 1000,
       "answerId": 3,
       "audioUrl": "18/18.m4a",
@@ -425,23 +425,23 @@
       "options": [
         {
           "id": 1,
-          "title": "Bhithinn deònach leum a mach a itealan.",
+          "title": "Bhitheadh mi deònach leum a-mach á itealan.",
           "audioUrl": "18/18a.m4a"
         },
         {
           "id": 2,
-          "title": "Bhitheadmaid deònach leum a mach a itealan.",
+          "title": "Bhitheadmaid deònach leum a-mach á itealan.",
           "audioUrl": "18/18b.m4a"
         },
         {
           "id": 3,
-          "title": "Bhitheadh mi deònach leum a mach a itealan.",
+          "title": "Bhithinn deònach leum a-mach á itealan.",
           "audioUrl": "18/18c.m4a"
         }
       ]
     },
     {
-      "title": "Am faigh thu baine às am fhuaradair?",
+      "title": "Am faigh thu baine às an fhuaradair?",
       "value": 1000,
       "answerId": 1,
       "audioUrl": "19/19.m4a",
@@ -449,7 +449,7 @@
       "options": [
         {
           "id": 1,
-          "title": "Gheibh",
+          "title": "Gheobh",
           "audioUrl": "19/19a.m4a"
         },
         {
@@ -473,17 +473,17 @@
       "options": [
         {
           "id": 1,
-          "title": "Thog mi seacaid às a bhasgaid agus chuir mi anns an inneal nigheadaireachd e.",
+          "title": "Thog mi an seacaid às a'bhasgaid agus chuir mi anns an inneal nigheadaireachd e.",
           "audioUrl": "20/20a.m4a"
         },
         {
           "id": 2,
-          "title": "Thug mi seacaid às a bhasgaid agus chuir mi anns an inneal nigheadaireachd i.",
+          "title": "Thug mi an seacaid às a'bhasgaid agus chuir mi anns an inneal nigheadaireachd i.",
           "audioUrl": "20/20b.m4a"
         },
         {
           "id": 3,
-          "title": "Fhuair mi seacaid às a bhasgaid agus chuir mi anns an inneal nigheadaireach iad.",
+          "title": "Fhuair mi an seacaid às a'bhasgaid agus chuir mi anns an inneal nigheadaireach iad.",
           "audioUrl": "20/20c.m4a"
         }
       ]
