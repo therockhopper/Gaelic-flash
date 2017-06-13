@@ -14,7 +14,7 @@ export interface Card {
   value: number;
   answerId: number;
   audioUrl: string;
-  imageUrl: string;
+  imageUrl?: string;
   options: Option[];
   link: Link;
 }
