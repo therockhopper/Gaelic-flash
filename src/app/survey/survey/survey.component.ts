@@ -24,7 +24,7 @@ export class SurveyComponent implements OnInit, OnDestroy {
 
   score = 0;
 
-  surveyId: number;
+  surveyId;
   private paramSub: Subscription;
   private flashCardSub: Subscription;
 
