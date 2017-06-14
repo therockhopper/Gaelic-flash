@@ -57,7 +57,7 @@
       ]
     },
     {
-      "title": "Ciamar a tha Miaread a faireachdainn?",
+      "title": "Ciamar a tha Miaread a'faireachdainn?",
       "value": 1000,
       "answerId": 1,
       "audioUrl": "3/3.m4a",
@@ -129,7 +129,7 @@
       ]
     },
     {
-      "title": "Dé tha seo??",
+      "title": "Dé tha seo?",
       "value": 1000,
       "answerId": 1,
       "audioUrl": "6/6.m4a",
@@ -406,7 +406,7 @@
         },
         {
           "id": 2,
-          "title": "Dh’fhalbhBha an crodh aca às a'fheurach. ",
+          "title": "Dh’fhalbh an crodh aca às a'fheurach. ",
           "audioUrl": "17/17b.m4a"
         },
         {
