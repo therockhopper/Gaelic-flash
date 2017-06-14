@@ -24,8 +24,8 @@
         {
           "id": 3,
           "title": "Bha e ag obair agus chaidh e sìos an rathad.",
-          "audioUrl": "1/1c.m4a"
-        }
+         "audioUrl": "1/1c.m4a"
+       }
       ]
     },
     {
@@ -445,7 +445,7 @@
       "value": 1000,
       "answerId": 1,
       "audioUrl": "19/19.m4a",
-      "imageUrl": "getmilkfromfridge.jpg",
+      "imageUrl": "open-fridge.jpg",
       "options": [
         {
           "id": 1,
