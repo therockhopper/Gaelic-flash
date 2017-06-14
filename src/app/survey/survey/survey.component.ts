@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs/Subscription';
   templateUrl: './survey.component.html',
   styleUrls: ['./survey.component.scss'],
 })
+
 export class SurveyComponent implements OnInit, OnDestroy {
   flashCard: Card;
   flashCards: FlashCards;
@@ -22,9 +23,9 @@ export class SurveyComponent implements OnInit, OnDestroy {
   displayResult: boolean;
   loading: boolean;
 
-  score = 0;
+  score:number = 0;
 
-  surveyId;
+  surveyId:number;
   private paramSub: Subscription;
   private flashCardSub: Subscription;
 

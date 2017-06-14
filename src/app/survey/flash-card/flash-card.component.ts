@@ -16,8 +16,9 @@ export class FlashCardComponent implements OnInit {
   sound: HTMLAudioElement;
   selectedId: number;
 
-  timeLeft:number = 25;
-  countDownTimer: number
+  timeLeft:number = 60;
+
+  countDownTimer: number;
 
   constructor() {}
 
@@ -38,8 +39,8 @@ export class FlashCardComponent implements OnInit {
     // if we are done counting down, lets stop
     // and send the user to the next slide
     if ( this.timeLeft < 1 ) {
-     clearInterval(this.countDownTimer);
-     this.submitAnswer(-1);
+      clearInterval(this.countDownTimer);
+      this.submitAnswer(-1);
     }
   }
 
