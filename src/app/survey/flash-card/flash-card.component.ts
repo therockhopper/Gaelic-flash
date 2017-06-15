@@ -18,15 +18,18 @@ export class FlashCardComponent implements OnInit {
 
   timeLeft = 60;
 
-  countDownTimer: {} | number;
+  countDownTimer: number;
+
 
   constructor() {}
 
   ngOnInit() {
     this.sound = document.createElement('audio');
     this.sound.id = 'audio-player';
+    this.sound.preload = "auto";
     this.countDownTimer = setInterval( () => this.countDown(), 1000);
   }
+
 
   playAudio(url: string): void {
     this.sound.src = './assets/sounds/' + url;
