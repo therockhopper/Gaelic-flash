@@ -23,9 +23,9 @@ export class SurveyComponent implements OnInit, OnDestroy {
   displayResult: boolean;
   loading: boolean;
 
-  score:number = 0;
+  score = 0;
 
-  surveyId:number;
+  surveyId: number;
   private paramSub: Subscription;
   private flashCardSub: Subscription;
 
