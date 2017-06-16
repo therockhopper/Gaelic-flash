@@ -20,7 +20,6 @@ export class FlashCardComponent implements OnInit {
 
   countDownTimer: number;
 
-
   constructor() {}
 
   ngOnInit() {
