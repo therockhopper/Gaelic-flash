@@ -13,7 +13,8 @@ export interface Card {
   title: string;
   value: number;
   answerId: number;
-  audioUrl: string;
+  audioUrl?: string;
+  pdfUrl?: string;
   imageUrl?: string;
   options: Option[];
   link: Link;
