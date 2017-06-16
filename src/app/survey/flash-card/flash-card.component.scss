@@ -14,10 +14,14 @@
 }
 
 .img {
+  display: flex;
+  justify-content: center;
+
   img {
     max-height: 50vh;
     object-fit: cover;
   }
+
 }
 
 .options {
