@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-img img">
     <img [src]="'./assets/images/' + flashCard.imageUrl" *ngIf="flashCard.imageUrl">
-    <a [href]="'./assets/pdfs/' + flashCard.pdfUrl" download *ngIf="flashCard.pdfUrl">naidheachd</a>
+    <a [href]="'./assets/pdfs/' + flashCard.pdfUrl" target="_blank" rel="noopener" *ngIf="flashCard.pdfUrl">naidheachd</a>
   </div>
   <div class="card-block">
     <h2 class="card-title title">
